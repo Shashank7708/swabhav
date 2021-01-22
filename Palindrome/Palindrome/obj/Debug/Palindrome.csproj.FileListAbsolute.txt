@@ -1,0 +1,7 @@
+C:\swabhav\Palindrome\Palindrome\obj\Debug\Palindrome.csprojAssemblyReference.cache
+C:\swabhav\Palindrome\Palindrome\obj\Debug\Palindrome.csproj.CoreCompileInputs.cache
+C:\swabhav\Palindrome\Palindrome\bin\Debug\Palindrome.exe.config
+C:\swabhav\Palindrome\Palindrome\bin\Debug\Palindrome.exe
+C:\swabhav\Palindrome\Palindrome\bin\Debug\Palindrome.pdb
+C:\swabhav\Palindrome\Palindrome\obj\Debug\Palindrome.exe
+C:\swabhav\Palindrome\Palindrome\obj\Debug\Palindrome.pdb
