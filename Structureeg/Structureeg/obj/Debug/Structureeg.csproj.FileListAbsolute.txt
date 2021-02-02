@@ -1,0 +1,7 @@
+C:\swabhav\Structureeg\Structureeg\obj\Debug\Structureeg.csprojAssemblyReference.cache
+C:\swabhav\Structureeg\Structureeg\obj\Debug\Structureeg.csproj.CoreCompileInputs.cache
+C:\swabhav\Structureeg\Structureeg\bin\Debug\Structureeg.exe.config
+C:\swabhav\Structureeg\Structureeg\bin\Debug\Structureeg.exe
+C:\swabhav\Structureeg\Structureeg\bin\Debug\Structureeg.pdb
+C:\swabhav\Structureeg\Structureeg\obj\Debug\Structureeg.exe
+C:\swabhav\Structureeg\Structureeg\obj\Debug\Structureeg.pdb

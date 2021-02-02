@@ -1,0 +1,7 @@
+C:\swabhav\ArrayOperation\ArrayOperation\bin\Debug\ArrayOperation.exe.config
+C:\swabhav\ArrayOperation\ArrayOperation\bin\Debug\ArrayOperation.exe
+C:\swabhav\ArrayOperation\ArrayOperation\bin\Debug\ArrayOperation.pdb
+C:\swabhav\ArrayOperation\ArrayOperation\obj\Debug\ArrayOperation.csprojAssemblyReference.cache
+C:\swabhav\ArrayOperation\ArrayOperation\obj\Debug\ArrayOperation.csproj.CoreCompileInputs.cache
+C:\swabhav\ArrayOperation\ArrayOperation\obj\Debug\ArrayOperation.exe
+C:\swabhav\ArrayOperation\ArrayOperation\obj\Debug\ArrayOperation.pdb

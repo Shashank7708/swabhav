@@ -1,0 +1,6 @@
+C:\swabhav\LearnCommand1\LearnCommand1\bin\Debug\LearnCommand1.exe.config
+C:\swabhav\LearnCommand1\LearnCommand1\bin\Debug\LearnCommand1.exe
+C:\swabhav\LearnCommand1\LearnCommand1\bin\Debug\LearnCommand1.pdb
+C:\swabhav\LearnCommand1\LearnCommand1\obj\Debug\LearnCommand1.csproj.CoreCompileInputs.cache
+C:\swabhav\LearnCommand1\LearnCommand1\obj\Debug\LearnCommand1.exe
+C:\swabhav\LearnCommand1\LearnCommand1\obj\Debug\LearnCommand1.pdb

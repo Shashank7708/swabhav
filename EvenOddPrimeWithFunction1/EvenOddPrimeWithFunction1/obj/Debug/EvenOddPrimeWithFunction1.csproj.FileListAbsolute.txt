@@ -1,0 +1,7 @@
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\obj\Debug\EvenOddPrimeWithFunction1.csprojAssemblyReference.cache
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\obj\Debug\EvenOddPrimeWithFunction1.csproj.CoreCompileInputs.cache
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\bin\Debug\EvenOddPrimeWithFunction1.exe.config
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\bin\Debug\EvenOddPrimeWithFunction1.exe
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\bin\Debug\EvenOddPrimeWithFunction1.pdb
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\obj\Debug\EvenOddPrimeWithFunction1.exe
+C:\swabhav\EvenOddPrimeWithFunction1\EvenOddPrimeWithFunction1\obj\Debug\EvenOddPrimeWithFunction1.pdb

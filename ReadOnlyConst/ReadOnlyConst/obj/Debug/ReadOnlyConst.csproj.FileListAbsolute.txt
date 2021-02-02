@@ -1,0 +1,7 @@
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\obj\Debug\ReadOnlyConst.csprojAssemblyReference.cache
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\obj\Debug\ReadOnlyConst.csproj.CoreCompileInputs.cache
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\bin\Debug\ReadOnlyConst.exe.config
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\bin\Debug\ReadOnlyConst.exe
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\bin\Debug\ReadOnlyConst.pdb
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\obj\Debug\ReadOnlyConst.exe
+C:\swabhav\ReadOnlyConst\ReadOnlyConst\obj\Debug\ReadOnlyConst.pdb

@@ -1,0 +1,7 @@
+C:\swabhav\PersonHealth\PersonHealth\bin\Debug\PersonHealth.exe.config
+C:\swabhav\PersonHealth\PersonHealth\bin\Debug\PersonHealth.exe
+C:\swabhav\PersonHealth\PersonHealth\bin\Debug\PersonHealth.pdb
+C:\swabhav\PersonHealth\PersonHealth\obj\Debug\PersonHealth.csprojAssemblyReference.cache
+C:\swabhav\PersonHealth\PersonHealth\obj\Debug\PersonHealth.csproj.CoreCompileInputs.cache
+C:\swabhav\PersonHealth\PersonHealth\obj\Debug\PersonHealth.exe
+C:\swabhav\PersonHealth\PersonHealth\obj\Debug\PersonHealth.pdb

@@ -1,0 +1,6 @@
+C:\swabhav\PassByValue\PassByValue\bin\Debug\PassByValue.exe.config
+C:\swabhav\PassByValue\PassByValue\bin\Debug\PassByValue.exe
+C:\swabhav\PassByValue\PassByValue\bin\Debug\PassByValue.pdb
+C:\swabhav\PassByValue\PassByValue\obj\Debug\PassByValue.csproj.CoreCompileInputs.cache
+C:\swabhav\PassByValue\PassByValue\obj\Debug\PassByValue.exe
+C:\swabhav\PassByValue\PassByValue\obj\Debug\PassByValue.pdb
