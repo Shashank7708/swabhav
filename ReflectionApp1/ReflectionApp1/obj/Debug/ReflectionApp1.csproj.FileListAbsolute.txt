@@ -1,0 +1,7 @@
+C:\swabhav\ReflectionApp1\ReflectionApp1\bin\Debug\ReflectionApp1.exe.config
+C:\swabhav\ReflectionApp1\ReflectionApp1\bin\Debug\ReflectionApp1.exe
+C:\swabhav\ReflectionApp1\ReflectionApp1\bin\Debug\ReflectionApp1.pdb
+C:\swabhav\ReflectionApp1\ReflectionApp1\obj\Debug\ReflectionApp1.csprojAssemblyReference.cache
+C:\swabhav\ReflectionApp1\ReflectionApp1\obj\Debug\ReflectionApp1.csproj.CoreCompileInputs.cache
+C:\swabhav\ReflectionApp1\ReflectionApp1\obj\Debug\ReflectionApp1.exe
+C:\swabhav\ReflectionApp1\ReflectionApp1\obj\Debug\ReflectionApp1.pdb

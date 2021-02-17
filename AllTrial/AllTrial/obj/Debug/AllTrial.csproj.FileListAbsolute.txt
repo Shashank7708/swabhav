@@ -1,0 +1,7 @@
+C:\swabhav\AllTrial\AllTrial\bin\Debug\AllTrial.exe.config
+C:\swabhav\AllTrial\AllTrial\bin\Debug\AllTrial.exe
+C:\swabhav\AllTrial\AllTrial\bin\Debug\AllTrial.pdb
+C:\swabhav\AllTrial\AllTrial\obj\Debug\AllTrial.csprojAssemblyReference.cache
+C:\swabhav\AllTrial\AllTrial\obj\Debug\AllTrial.csproj.CoreCompileInputs.cache
+C:\swabhav\AllTrial\AllTrial\obj\Debug\AllTrial.exe
+C:\swabhav\AllTrial\AllTrial\obj\Debug\AllTrial.pdb

@@ -14,55 +14,46 @@ namespace PersonHealth
         private float weight;
         private float height;
 
-        internal Person(int a, string n, string g, float w,float h)
+        public int getAge
         {
-            age = a;
-            name = n;
-            gender = g;
-            weight = w;
-            height = h;
-        }
-        internal Person(string n,string gender)
-        {
-            name = n;
-            this.gender = gender;
+            set { this.age = value; }
+            get { return this.age; }
         }
 
-        public int getAge()
+        public string getName
         {
-            return age;
+            set { this.name = value; }
+            get { return this.name; }
+        }
+        public string getGender
+        {
+            set { this.gender = value; }
+            get { return this.gender; }
         }
 
-        public string getName()
+        public float getWeight
         {
-            return name;
+            set { this.weight = value; }
+            get { return this.weight; }
         }
-        public string getGender()
+        public float getHeight
         {
-            return gender;
+            set { this.height = value; }
+            get { return this.height; }
         }
-        public float getWeight()
-        {
-            return weight;
-        }
-
-        public float getHeight()
-        {
-            return height;
-        }
-        public  void workout()
-        {
-            weight =weight - 2.5f*weight/100;
-
-        }
+        
         public void eat()
         {
-            weight =weight + 5*weight/ 100;
+           
+                this.weight = this.weight + 5 * this.weight / 100;
+            
 
         }
-        public float BMR()
+        public float BMR
         {
-            return(66.5f+13.75f*weight+5.003f*height - 6.755f*age);
+            get { 
+                return (66.5f + 13.75f * weight + 5.003f * height - 6.755f * age);
+            }
         }
 
     }

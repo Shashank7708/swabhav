@@ -1,0 +1,7 @@
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\bin\Debug\ThrowAndThrowEx.exe.config
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\bin\Debug\ThrowAndThrowEx.exe
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\bin\Debug\ThrowAndThrowEx.pdb
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\obj\Debug\ThrowAndThrowEx.csprojAssemblyReference.cache
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\obj\Debug\ThrowAndThrowEx.csproj.CoreCompileInputs.cache
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\obj\Debug\ThrowAndThrowEx.exe
+C:\swabhav\ThrowAndThrowEx\ThrowAndThrowEx\obj\Debug\ThrowAndThrowEx.pdb

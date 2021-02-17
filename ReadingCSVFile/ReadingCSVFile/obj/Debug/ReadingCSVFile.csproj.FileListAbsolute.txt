@@ -1,0 +1,7 @@
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\bin\Debug\ReadingCSVFile.exe.config
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\bin\Debug\ReadingCSVFile.exe
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\bin\Debug\ReadingCSVFile.pdb
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\obj\Debug\ReadingCSVFile.csprojAssemblyReference.cache
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\obj\Debug\ReadingCSVFile.csproj.CoreCompileInputs.cache
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\obj\Debug\ReadingCSVFile.exe
+C:\swabhav\ReadingCSVFile\ReadingCSVFile\obj\Debug\ReadingCSVFile.pdb

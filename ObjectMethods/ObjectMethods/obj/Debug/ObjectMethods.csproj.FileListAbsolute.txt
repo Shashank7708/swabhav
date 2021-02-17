@@ -1,0 +1,7 @@
+C:\swabhav\ObjectMethods\ObjectMethods\bin\Debug\ObjectMethods.exe.config
+C:\swabhav\ObjectMethods\ObjectMethods\bin\Debug\ObjectMethods.exe
+C:\swabhav\ObjectMethods\ObjectMethods\bin\Debug\ObjectMethods.pdb
+C:\swabhav\ObjectMethods\ObjectMethods\obj\Debug\ObjectMethods.csprojAssemblyReference.cache
+C:\swabhav\ObjectMethods\ObjectMethods\obj\Debug\ObjectMethods.csproj.CoreCompileInputs.cache
+C:\swabhav\ObjectMethods\ObjectMethods\obj\Debug\ObjectMethods.exe
+C:\swabhav\ObjectMethods\ObjectMethods\obj\Debug\ObjectMethods.pdb

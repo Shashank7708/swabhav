@@ -1,0 +1,7 @@
+C:\swabhav\StackProduct\StackProduct\bin\Debug\StackProduct.exe.config
+C:\swabhav\StackProduct\StackProduct\bin\Debug\StackProduct.exe
+C:\swabhav\StackProduct\StackProduct\bin\Debug\StackProduct.pdb
+C:\swabhav\StackProduct\StackProduct\obj\Debug\StackProduct.csprojAssemblyReference.cache
+C:\swabhav\StackProduct\StackProduct\obj\Debug\StackProduct.csproj.CoreCompileInputs.cache
+C:\swabhav\StackProduct\StackProduct\obj\Debug\StackProduct.exe
+C:\swabhav\StackProduct\StackProduct\obj\Debug\StackProduct.pdb

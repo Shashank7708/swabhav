@@ -1,0 +1,7 @@
+C:\swabhav\CustomeException\CustomeException\bin\Debug\CustomeException.exe.config
+C:\swabhav\CustomeException\CustomeException\bin\Debug\CustomeException.exe
+C:\swabhav\CustomeException\CustomeException\bin\Debug\CustomeException.pdb
+C:\swabhav\CustomeException\CustomeException\obj\Debug\CustomeException.csprojAssemblyReference.cache
+C:\swabhav\CustomeException\CustomeException\obj\Debug\CustomeException.csproj.CoreCompileInputs.cache
+C:\swabhav\CustomeException\CustomeException\obj\Debug\CustomeException.exe
+C:\swabhav\CustomeException\CustomeException\obj\Debug\CustomeException.pdb

@@ -1,0 +1,7 @@
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\bin\Debug\substringTrialDuringTest.exe.config
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\bin\Debug\substringTrialDuringTest.exe
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\bin\Debug\substringTrialDuringTest.pdb
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\obj\Debug\substringTrialDuringTest.csprojAssemblyReference.cache
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\obj\Debug\substringTrialDuringTest.csproj.CoreCompileInputs.cache
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\obj\Debug\substringTrialDuringTest.exe
+C:\swabhav\substringTrialDuringTest\substringTrialDuringTest\obj\Debug\substringTrialDuringTest.pdb

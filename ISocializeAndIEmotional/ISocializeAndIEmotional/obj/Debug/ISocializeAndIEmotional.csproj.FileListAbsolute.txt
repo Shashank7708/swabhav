@@ -1,0 +1,7 @@
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\bin\Debug\ISocializeAndIEmotional.exe.config
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\bin\Debug\ISocializeAndIEmotional.exe
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\bin\Debug\ISocializeAndIEmotional.pdb
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\obj\Debug\ISocializeAndIEmotional.csprojAssemblyReference.cache
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\obj\Debug\ISocializeAndIEmotional.csproj.CoreCompileInputs.cache
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\obj\Debug\ISocializeAndIEmotional.exe
+C:\swabhav\ISocializeAndIEmotional\ISocializeAndIEmotional\obj\Debug\ISocializeAndIEmotional.pdb

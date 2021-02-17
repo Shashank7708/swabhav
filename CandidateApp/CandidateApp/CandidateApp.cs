@@ -8,18 +8,46 @@ namespace CandidateApp
 {
     class CandidateApp
     {
-        public int id;
-        public string name;
-        public char creditpoint;
-        public int age;
+        private int ID;
+        private string Name;
+        private char Creditpoint;
+        private int Age;
 
-            public CandidateApp(int id1,string name2,char point,int h)
-            {
-            id = id1;
-            name = name2;
-            creditpoint = point;
-            age = h;
+        public int id
+        {
+            set{
+                this.ID = value;
             }
+            get
+            {
+                return this.ID;
+            }
+        }
+
+        public string name
+        {
+            get
+            {
+                return Name;
+            }
+            set
+            {
+                this.Name = value;
+            }
+        }
+
+        public int age
+        {
+            set { this.Age = value; }
+            get { return this.Age; }
+        }
+
+        public char creditpoint
+        {
+            set { this.Creditpoint = value; }
+            get { return this.Creditpoint; }
+        }
+
 
         
     }

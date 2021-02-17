@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcLib", "CalcLib\CalcLib.csproj", "{7D8747E1-B919-4005-8BCD-D610F8AEBD44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClient1", "CalcClient1\CalcClient1.csproj", "{BFECE8FD-2122-4550-A507-24DE45E69D68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcTest", "CalcTest\CalcTest.csproj", "{82B91858-6D01-4166-BF7C-15E8E98E7757}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D8747E1-B919-4005-8BCD-D610F8AEBD44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8747E1-B919-4005-8BCD-D610F8AEBD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8747E1-B919-4005-8BCD-D610F8AEBD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8747E1-B919-4005-8BCD-D610F8AEBD44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFECE8FD-2122-4550-A507-24DE45E69D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFECE8FD-2122-4550-A507-24DE45E69D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFECE8FD-2122-4550-A507-24DE45E69D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFECE8FD-2122-4550-A507-24DE45E69D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B91858-6D01-4166-BF7C-15E8E98E7757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B91858-6D01-4166-BF7C-15E8E98E7757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B91858-6D01-4166-BF7C-15E8E98E7757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B91858-6D01-4166-BF7C-15E8E98E7757}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8418E6C-D9BD-4A08-877C-66E05DAC3B67}
+	EndGlobalSection
+EndGlobal

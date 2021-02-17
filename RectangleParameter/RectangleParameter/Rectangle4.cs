@@ -8,31 +8,50 @@ namespace RectangleParameter
 {
     class Rectangle4
     {
-        public int height;
-        public int width;
-        public string color;
+        private int height;
+        private int width;
+        private string color;
 
-        public Rectangle4(int h,int w,string c)
-        {
-            if (h < 1)
-                height = 1;
-            else if (h > 100)
-                height = 100;
-            else
-                height = h;
-            if (w< 1)
-                width = 1;
-            else if (w > 100)
-                width = 100;
-            else
-                width = 100;
-
-            if (c == "Red" || c == "red" || c == "Blue" || c == "blue" || c == "green" || c == "Green")
+        public int PropertyHeight
+        { set
             {
-                color = c;
+                if (value < 1)
+                    height = 1;
+                else if (value > 100)
+                    height = 100;
+                else
+                    height = value;
             }
-            else
-                color = "black";
+            get { return height; }
+        }
+
+        public int PropertyWidth
+        {
+            set {
+                if (value < 1)
+                    width = 1;
+                else if (value > 100)
+                    width = 100;
+                else
+                    width = value;
+            }
+            get { return width; }
+        }
+        public string PropertyColor
+        {
+            set
+            {
+                if (value== "Red" || value== "red" || value == "Blue" || value == "blue" ||value == "green" || value== "Green")
+                {
+                    color = value;
+                }
+                else
+                    color = "black";
+            }
+            get
+            {
+                return color;
+            }
         }
     }
 }

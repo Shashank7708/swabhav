@@ -1,0 +1,6 @@
+C:\swabhav\CalcSolution\CalcLib\bin\Debug\CalcLib.dll
+C:\swabhav\CalcSolution\CalcLib\bin\Debug\CalcLib.pdb
+C:\swabhav\CalcSolution\CalcLib\obj\Debug\CalcLib.csprojAssemblyReference.cache
+C:\swabhav\CalcSolution\CalcLib\obj\Debug\CalcLib.csproj.CoreCompileInputs.cache
+C:\swabhav\CalcSolution\CalcLib\obj\Debug\CalcLib.dll
+C:\swabhav\CalcSolution\CalcLib\obj\Debug\CalcLib.pdb

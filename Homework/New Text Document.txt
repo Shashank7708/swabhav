@@ -1,0 +1,35 @@
+@1.What is an Exception
+    An Exception iss unforeseen error that occcur when program in running
+
+     eg:Trying to read a file that does not exist i.e FileNotFounfEXCEPTION
+
+@2. TRY CATCH AND ERROR
+	If there is Try there should be either or both catch and Finally;.   //throws an Error if not
+	Each Try Block must be followed by One more Catch block or FInally Block.
+	There can be multiple catch Block to catch different type of exception.
+	Can have only one final block.
+	(Catch block is Optional But If there is an exception then Finally won't be executed)
+	(Finally is always executed)
+	(Finally is not executed only when there is no catch block written to catch error in try )
+    try
+	{
+	var line = File.ReadAllLines(@"C:\swabhav\reading.csv");                       ///Error:Expected Catch OR Finally
+		for (int i = 0; i < line.Length; i++)
+        {
+            Console.WriteLine(line[i]);
+        }
+    }
+   try {
+
+    }
+	
+@3.StackOverflow Exception
+	When the function is calling itself again and again without any changes i.e (Same Code is excuted again and agin without any changes)
+	then there is StackOverflowError
+	
+@4. Difference between Throw and Throws Exception
+	In main if a functn is calling another Functn(that gives an Error)
+	Throw ex: ex contain a message only from function called by main to main()
+	Throw : snd a message form functn giving error to called function and from called function to main
+	
+	

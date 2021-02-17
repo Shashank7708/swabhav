@@ -10,6 +10,7 @@ namespace GuessGame
     {
         static void Main(string[] args)
         {
+            
                                                                     //Initializing Random number
             int noOfTurns = 0;                                      //TO calculate no of Attemptes                         
             bool temp = true;
@@ -18,8 +19,9 @@ namespace GuessGame
                 Console.Write("Enter your no:");
                 try
                 {
-                    int userguess = Convert.ToInt32(Console.ReadLine());       //Take User Guess
-                    temp = new GuessGame().CheckUserGuess(userguess);          //Check User Input
+                    GuessGame guessGame1 = new GuessGame();
+                    guessGame1.UserGuess = Convert.ToInt32(Console.ReadLine());       //Take User Guess
+                    temp =guessGame1.CheckUserGuess;          //Check User Input
                 }
                 catch(Exception e)
                 {

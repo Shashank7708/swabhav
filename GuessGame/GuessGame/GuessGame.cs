@@ -9,16 +9,24 @@ namespace GuessGame
     class GuessGame
     {
         int randomnum = 30;
+        private int userguess;
 
-        public bool CheckUserGuess(int userguess)         //To check user Guess
+        public int UserGuess
         {
-            if (userguess == randomnum)                           //The User has guess Correctly,Return True
-                return false;
-            else if (userguess > randomnum)
-                Console.WriteLine("Hint: Your guess is high\n");     //User Guess is Greater than Random no
-            else
-                Console.WriteLine("Hint: Your guess is low\n");       //User Guess is smaller than Random no
-            return true;
+            set { this.userguess = value; }
+        }
+        public bool CheckUserGuess        //To check user Guess
+        {
+            get
+            {
+                if (userguess == randomnum)                           //The User has guess Correctly,Return True
+                    return false;
+                else if (userguess > randomnum)
+                    Console.WriteLine("Hint: Your guess is high\n");     //User Guess is Greater than Random no
+                else
+                    Console.WriteLine("Hint: Your guess is low\n");       //User Guess is smaller than Random no
+                return true;
+            }
         }
     }
 }

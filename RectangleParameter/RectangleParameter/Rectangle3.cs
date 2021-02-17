@@ -12,28 +12,29 @@ namespace RectangleParameter
         private  int width;
         private string color;
 
-        public Rectangle3(int h1, int w1, string c)
+        public int returnHeight
         {
-            height = h1;
-            width = w1;
-            color = c;
+            set { this.height = value; }
+            get { return this.height; }
+        }
+        public int returnWidth
+        {
+            set { this.width = value; }
+            get { return this.width; }
+        }
+        public string returnColor
+        {
+            set
+            {
+                if (value == "Red" || value == "red" || value == "Blue" || value == "blue" || value == "Green" || value == "green")
+                    this.color = value;
+                else
+                    this.color = "Black";
+            }
+            get { return this.color; }
         }
         
-        public int returnHeight()
-        {
-            return height;
-        }
-
-        public int returnWidth()
-        {
-            return width;
-        }
-
-        public string returnColor()
-        {
-            return color;
-        }
-
+      
 
     }
 }

@@ -1,0 +1,7 @@
+C:\swabhav\StackOverflowError\StackOverflowError\bin\Debug\StackOverflowError.exe.config
+C:\swabhav\StackOverflowError\StackOverflowError\bin\Debug\StackOverflowError.exe
+C:\swabhav\StackOverflowError\StackOverflowError\bin\Debug\StackOverflowError.pdb
+C:\swabhav\StackOverflowError\StackOverflowError\obj\Debug\StackOverflowError.csprojAssemblyReference.cache
+C:\swabhav\StackOverflowError\StackOverflowError\obj\Debug\StackOverflowError.csproj.CoreCompileInputs.cache
+C:\swabhav\StackOverflowError\StackOverflowError\obj\Debug\StackOverflowError.exe
+C:\swabhav\StackOverflowError\StackOverflowError\obj\Debug\StackOverflowError.pdb
