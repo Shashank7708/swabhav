@@ -1,7 +1,0 @@
-C:\swabhav\AnimalSerialization\AnimalSerialization\bin\Debug\AnimalSerialization.exe.config
-C:\swabhav\AnimalSerialization\AnimalSerialization\bin\Debug\AnimalSerialization.exe
-C:\swabhav\AnimalSerialization\AnimalSerialization\bin\Debug\AnimalSerialization.pdb
-C:\swabhav\AnimalSerialization\AnimalSerialization\obj\Debug\AnimalSerialization.csprojAssemblyReference.cache
-C:\swabhav\AnimalSerialization\AnimalSerialization\obj\Debug\AnimalSerialization.csproj.CoreCompileInputs.cache
-C:\swabhav\AnimalSerialization\AnimalSerialization\obj\Debug\AnimalSerialization.exe
-C:\swabhav\AnimalSerialization\AnimalSerialization\obj\Debug\AnimalSerialization.pdb

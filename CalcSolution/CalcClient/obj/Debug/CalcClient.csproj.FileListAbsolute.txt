@@ -1,7 +1,0 @@
-C:\swabhav\CalcSolution\CalcClient\bin\Debug\CalcClient.exe.config
-C:\swabhav\CalcSolution\CalcClient\bin\Debug\CalcClient.exe
-C:\swabhav\CalcSolution\CalcClient\bin\Debug\CalcClient.pdb
-C:\swabhav\CalcSolution\CalcClient\obj\Debug\CalcClient.csprojAssemblyReference.cache
-C:\swabhav\CalcSolution\CalcClient\obj\Debug\CalcClient.csproj.CoreCompileInputs.cache
-C:\swabhav\CalcSolution\CalcClient\obj\Debug\CalcClient.exe
-C:\swabhav\CalcSolution\CalcClient\obj\Debug\CalcClient.pdb
