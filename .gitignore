@@ -509,7 +509,7 @@ MigrationBackup/
  *.txt 
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudio,aspnetcore
-dir/*.bin
+
 *.gif
 *.png
 *.csv
