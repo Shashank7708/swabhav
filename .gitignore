@@ -510,6 +510,6 @@ MigrationBackup/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudio,aspnetcore
 
-*.gif
-*.png
-*.csv
+ *.gif
+ *.png
+ *.csv
