@@ -12,22 +12,22 @@ namespace InheritanceCases
         {
             try
             {
-                Man m1 = new Man();
-                Child c1 = (Child)m1;
+                Man c1 = new Child();
                 c1.Play();
                 c1.Eat();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-          /*  Case1();
+            Case1();
             Case2();
             Case3();
-            Case4(); */
+            Case4();
+            Case5();
             Console.Read();
 
-            
+
         }
 
         public static void Case1()
@@ -63,6 +63,16 @@ namespace InheritanceCases
             Console.WriteLine(x.GetType());
             x = new Man();
             Console.WriteLine(x.GetType());
+        }
+        public static void Case5()
+        {
+            Child c = new Child();
+            Man m = (Man)c;
+            m = c;
+            
+            m.Eat();
+            m.Play();
+            m.Qar();
         }
 
     }

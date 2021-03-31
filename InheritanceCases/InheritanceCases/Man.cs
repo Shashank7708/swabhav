@@ -16,5 +16,9 @@ namespace InheritanceCases
         {
             Console.WriteLine("Man is Eating");
         }
+        public void Qar()
+        {
+            Console.WriteLine("hello");
+        }
     }
 }
