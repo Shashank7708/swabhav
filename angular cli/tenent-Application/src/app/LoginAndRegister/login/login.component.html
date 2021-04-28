@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="jumbotron">
+                <h2 class="text-primary">Login</h2>
+                <form [formGroup]="login" (ngSubmit)="onSubmit()">
+                    
+                    
+                <div class="form-group">
+                      <label class="font-weight-bold">Company-Name</label>
+                      <input type="text" #name (keyup.enter)="FindCompanyOfUser(name.value)"
+                         [(ngModel)]="companyname"
+                        class="form-control"
+                          formControlName="companyname"
+                         placeholder="Enter Company Name And Press Enter">
+                </div>
+
+
+                <div class="form-group">
+                    <label class="font-weight-bold">UserName</label>
+                    <input type="email"
+                     [(ngModel)]="user.username"
+                     class="form-control"
+                     formControlName="UserName"
+                     placeholder="Enter Username(Email)">
+                        <div class="text-danger" *ngIf="login.controls['UserName'].hasError('required') 
+                                && login.controls['UserName'].touched" >
+                                Username Field Cannot be Empty 
+                        </div >
+                        <div class="text-danger" *ngIf="login.controls['UserName'].hasError('email') 
+                                  && login.controls['UserName'].touched">
+                                Please Enter a Valid Email
+                        </div>
+                        
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Password</label>
+                    <input type="password"
+                     [(ngModel)]="user.password"
+                     class="form-control"
+                     formControlName="Password">
+                        <div class="text-danger" *ngIf="login.controls['Password'].hasError('required') 
+                                && login.controls['Password'].touched" >
+                                Password Field Cannot be Empty 
+                        </div>
+                </div>
+                {{invalidUser}}
+                    <button [disabled]="disableButton" class="btn btn-dark" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<router-outlet></router-outlet>

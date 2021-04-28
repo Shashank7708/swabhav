@@ -1,0 +1,69 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="jumbotron">
+                <h2 class="text-primary">Add-Tenent</h2>
+                <form [formGroup]="addtenent" (ngSubmit)="onSubmit()">
+                
+                    <div class="form-group">
+                        <label class="font-weight-bold">Name</label>
+                        <input type="text"
+                         [(ngModel)]="tenent.name"
+                         class="form-control"
+                         formControlName="Name">
+                            <div class="text-danger" *ngIf="addtenent.controls['Name'].hasError('required') 
+                                    && addtenent.controls['Name'].touched" >
+                                    Name Field Cannot be Empty 
+                            </div>
+                            <div class="text-danger" *ngIf="addtenent.controls['UserName'].hasError('email') 
+                            && addtenent.controls['UserName'].touched">
+                          Please Enter a Valid Email
+                  </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label class="font-weight-bold">CompanyStrength</label>
+                        <input type="text"
+                         [(ngModel)]="tenent.strength"
+                         class="form-control"
+                         formControlName="Strength">
+                            <div class="text-danger" *ngIf="addtenent.controls['Strength'].hasError('required') 
+                                    && addtenent.controls['Strength'].touched" >
+                                    Strength Field Cannot be Empty 
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="font-weight-bold">UserName</label>
+                        <input type="email"
+                         [(ngModel)]="tenent.username"
+                         class="form-control"
+                         formControlName="UserName"
+                         placeholder="Enter Username(Email)">
+                            <div class="text-danger" *ngIf="addtenent.controls['UserName'].hasError('required') 
+                                    && addtenent.controls['UserName'].touched && addtenent.controls['email'] " >
+                                    Username Field Cannot be Empty 
+                            </div>
+                            
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold">Password</label>
+                        <input type="password"
+                         [(ngModel)]="tenent.password"
+                         class="form-control"
+                         formControlName="Password">
+                            <div class="text-danger" *ngIf="addtenent.controls['Password'].hasError('required') 
+                                    && addtenent.controls['Password'].touched" >
+                                    Password Field Cannot be Empty 
+                            </div>
+                    </div>
+
+                    <button class="btn btn-dark" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

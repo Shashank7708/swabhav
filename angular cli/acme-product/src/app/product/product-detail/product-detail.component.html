@@ -1,0 +1,53 @@
+<br>
+
+ <div class="container">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+             <div class="panel-title">
+                     Product-Detail
+             </div>
+         </div>
+         <div class="panel body">
+             <div class="container">
+                  <div class="col-sm-6">
+                           <div>
+                                 Name:{{product.productName}}
+                            </div>
+                            <br>
+                            <div>
+                                 Code:{{product.productCode}}
+                             </div>
+                             <br>
+                             <div>
+                                   Description:{{product.description}}
+                             </div>
+                             <br>
+                             <div>
+                                     Availability:{{product.releaseDate}}
+                             </div>
+                             <br>
+                             <div>
+                                    Price:{{product.price}}
+                             </div>
+                             <br>
+                             <div>
+                                      5 Star Rating:<rating [rating]= "product.starRating"
+                                                            (ratingEvent)="ratingHandler($event)">
+                                                    </rating>
+                                      
+                             </div>
+
+                    </div>
+                     <div class="col-sm-6">
+                            <img  src="{{product.imageUrl}}" atl="hello" height="70%" width="70%"/>
+                     </div>
+                </div>
+
+        <div class="panel-footer">
+            <button (click)="back()">Back</button>
+        </div>
+
+
+</div>
+</div>

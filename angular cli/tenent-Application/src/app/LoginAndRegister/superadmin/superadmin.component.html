@@ -1,0 +1,41 @@
+<button class="btn btn-primary btn-lg" (click)="addClick()" type="submit">Add</button>
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-12">
+            
+         
+<table class="table">
+<thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>tenentstrength</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Users</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let tenent of tenents">
+    <td scope="row">{{tenent.id}}</td>
+    <td scope="row">{{tenent.name}}</td>
+    
+    <td scope="row">{{tenent.tenentStrength}}</td>
+    
+    <td>
+        <button type="button" class="btn btn btn-info" (click)="editClick(tenent)" >Edit</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger" (click)="deleteClick(tenent.id)"   >Delete</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-warning" (click)="getusers(tenent)">Users</button>
+    </td>
+    </tr>
+    
+</table>
+</div>
+</div>
+</div>

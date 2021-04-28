@@ -1,0 +1,80 @@
+
+
+<!--
+<div class="form-froup row">
+<label class="col-sm-2 col-form-label">Name</label>
+<div>
+<input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter name">
+</div>
+
+<br>
+<br>
+<label class="col-sm-2 col-form-label">mobileno</label>
+<div>
+<input type="text" class="form-control" [(ngModel)]="mobileno" placeholder="mobileno">
+</div>
+</div>
+<button class="btn btn-primary"  type="submit" (click)="addContact()" >Submit</button>
+-->
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="jumbotron">
+                <h2 class="text-primary">Edit-Address</h2>
+                <form [formGroup]="editAddress" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        
+                        <input type="text" hidden
+                        [disabled]="true"
+                        [(ngModel)]="address.id"  
+                        class="form-control"
+                        formControlName="Id">
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">City</label>
+                        <input type="text"
+                         [(ngModel)]="address.city"
+                         class="form-control"
+                         formControlName="City">
+                            <div class="text-danger" *ngIf="editAddress.controls['City'].hasError('required') 
+                                    && editAddress.controls['City'].touched" >
+                                    City Field Cannot be Empty 
+                            </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label class="font-weight-bold">State</label>
+                        <input type="text"
+                         [(ngModel)]="address.state"
+                         class="form-control"
+                         formControlName="State">
+                            <div class="text-danger" *ngIf="editAddress.controls['State'].hasError('required') 
+                                    && editAddress.controls['State'].touched" >
+                                    State Field Cannot be Empty 
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="font-weight-bold">Country</label>
+                        <input type="text"
+                         [(ngModel)]="address.country"
+                         class="form-control"
+                         formControlName="Country">
+                            <div class="text-danger" *ngIf="editAddress.controls['Country'].hasError('required') 
+                                    && editAddress.controls['Country'].touched" >
+                                    Country Field Cannot be Empty 
+                            </div>
+                    </div>
+                    <button class="btn btn-dark" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<button class="btn btn-primary" (click)="BackToList()">Back To Address List</button>

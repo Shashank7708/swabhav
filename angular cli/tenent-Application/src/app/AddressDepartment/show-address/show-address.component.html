@@ -1,0 +1,46 @@
+
+<br>
+<br>
+
+
+<button class="btn btn-primary btn-lg" (click)="addClick()" type="submit">Add</button>
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-12">
+            
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>City</th>
+            <th>State</th>   
+            
+            <th>Country</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let address of addresses">
+        <td scope="row">{{address.id}}</td>
+        <td scope="row">{{address.city}}</td>
+        <td scope="row">{{address.state}}</td>
+        <td scope="row">{{address.country}}</td>
+        <td scope="row">
+        
+        <button type="button" class="btn btn btn-info" (click)="editClick(address)" >Edit</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger" (click)="deleteClick(address.id)"   >Delete</button>
+    </td>
+    </tr>
+    
+</table>
+</div>
+</div>
+</div>
+<br>
+<br>
+<a class="btn btn-primary" (click)="backtocontactlist()">Back to Main List</a>

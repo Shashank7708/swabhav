@@ -1,0 +1,55 @@
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="jumbotron">
+                <h2 class="text-primary">Edit-Contact</h2>
+                <form [formGroup]="editcontact" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        
+                        <input type="text" hidden
+                        [disabled]="true"
+                        [(ngModel)]="contact.id"  
+                        class="form-control"
+                        formControlName="Id">
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Name</label>
+                        <input type="text"
+                         [(ngModel)]="contact.name"
+                         class="form-control"
+                         formControlName="Name">
+                            <div class="text-danger" *ngIf="editcontact.controls['Name'].hasError('required') 
+                                    && editcontact.controls['Name'].touched" >
+                                    Name Field Cannot be Empty 
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold">MobileNo</label>
+                        <input type="number"
+                         [(ngModel)]="contact.mobileno"
+                         class="form-control"
+                         formControlName="Mobileno">
+                         <div class="text-danger">
+                            <div *ngIf="editcontact.controls['Mobileno'].hasError('required') 
+                                    && editcontact.controls['Mobileno'].touched" >
+                                     Mobileno Field cannot be empty
+                             </div>
+                             <div *ngIf="editcontact.controls['Mobileno'].errors?.minlength
+                                && editcontact.controls['Mobileno'].errors?.minlength
+                                && editcontact.controls['Mobileno'].touched" >
+                                Min Lenghth is 10 and max lenght is 10
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<a class="btn btn-primary" routerLink="/home">Back to Main List</a>
