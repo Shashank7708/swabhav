@@ -101,7 +101,7 @@ FindCompanyOfUser(companyName:string){
       }
       else if(this.UsertoCheck.role="superadmin"){
         console.log('superadmin');
-
+        localStorage.setItem('tenent',JSON.stringify(this.tenent));
         this.route.navigateByUrl('secure/getalltenent');
       }
     },

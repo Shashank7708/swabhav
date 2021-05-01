@@ -26,6 +26,7 @@ import { AuthGuard } from './auth.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import { ShowfavouriteComponent } from './LoginAndRegister/showfavourite/showfavourite.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import {ToastrModule} from 'ngx-toastr';
     SuperadminComponent,
     EditTenentComponent,
     NavbarComponent,
+    ShowfavouriteComponent,
   
   ],
   imports: [

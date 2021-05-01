@@ -25,7 +25,7 @@ namespace ContactAddressCore.Model
         public virtual List<Contact> Contacts { get; set; } = new List<Contact>();
 
 
-
+        public string Favourite { get; set; }
 
 
 

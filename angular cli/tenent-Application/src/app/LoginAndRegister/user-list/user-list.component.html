@@ -24,7 +24,7 @@
 </div>
 -->
 
-<br>
+
 <br>
 <div class="container1">
     <div class="box">
@@ -38,10 +38,13 @@
     <div class="box box1" (click)="addClick()">
         <h2  >AddUser</h2>
         </div>
+     <div class="box box2" (click)="showfavourite()">
+        <h2  >Favourite</h2>
+        </div>
 </div>
 
 
-<br>
+
 <br>
 <div *ngIf="dummydata">
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam earum ipsum, maiores temporibus cumque alias explicabo quidem magni quia, ipsam, consequatur nostrum expedita omnis nobis laudantium eveniet nulla quis molestiae?</p>
@@ -63,6 +66,7 @@
         <th>Id</th>
         <th>UserName</th>
         <th>Role</th>
+        <th>Favourite</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>Contacts</th>
@@ -73,7 +77,9 @@
     <td scope="row">{{user. userName}}</td>
     
     <td scope="row">{{user.role}}</td>
-    
+    <td>
+        <button type="button" class="btn btn btn-success" (click)="Addfavourite(user.id)" >Favourite</button>
+    </td>
     <td>
         <button type="button" class="btn btn btn-info" (click)="editClick(user)" >Edit</button>
     </td>

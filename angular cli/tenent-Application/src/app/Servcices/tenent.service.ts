@@ -120,4 +120,16 @@ updateTenent(tenentid:any,tenent:Tenent){
  return this.http.put(this._url+tenentid+"/update",tenent);
 }
 
+addfavourite(tenentid:any,userid:any):Observable<any>{
+  return this.http.get<any>(this._url+tenentid+"/user/"+userid+"/addfavourite");
+}
+
+removefavourite(tenentid:any,userid:any){
+  return this.http.delete(this._url+tenentid+"/user/"+userid+"/removefavourite");
+}
+
+getfavourite(tenentid:any):Observable<any>{
+  return this.http.get<any>(this._url+tenentid+"/user/favourite");
+}
+
 }

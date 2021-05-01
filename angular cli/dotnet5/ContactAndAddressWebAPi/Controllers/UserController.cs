@@ -129,9 +129,53 @@ namespace ContactAndAddressWebAPi.Controllers
             {
                 Debug.WriteLine(e.Message);
                 return BadRequest("Usr not deleted");
-    }
+            }
             return BadRequest("User not deleted");
-}
+        }
+
+        [HttpGet]
+        [Route("{tenentId}/user/{userId}/addfavourite")]
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult> addfavourite(Guid tenentId,Guid userId) 
+        {
+            if (tenentId.ToString() == null || userId.ToString() == null)
+                return BadRequest("Invalid user or tenent");
+            User user =await this._Userrepo.FirstOrDefault(x => x.Id == userId && x.Tenent.Id == tenentId);
+            if(user==null)
+                return BadRequest("Invalid user or tenent");
+            user.Favourite = "yes";
+            await this._Userrepo.update(user);
+            return Ok("user Updated successfully");
+        }
+
+        [HttpDelete]
+        [Route("{tenentId}/user/{userId}/removefavourite")]
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult> Removefavourite(Guid tenentId, Guid userId)
+        {
+            if (tenentId.ToString() == null || userId.ToString() == null)
+                return BadRequest("Invalid user or tenent");
+            User user = await this._Userrepo.FirstOrDefault(x => x.Id == userId && x.Tenent.Id == tenentId);
+            if (user == null)
+                return BadRequest("Invalid user or tenent");
+            user.Favourite = "no";
+            await this._Userrepo.update(user);
+            return Ok("user Updated successfully");
+        }
+
+        [HttpGet]
+        [Route("{tenentId}/user/favourite")]
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult<IEnumerable<User>>> GetfavouriteUser(Guid tenentId)
+        {
+            IEnumerable<User> users = await this._Userrepo.GetListBasedOnCondition(x => 
+                                                           x.Tenent.Id == tenentId && x.Favourite.Equals("yes"));
+            if (users.Count() > 0)
+            {
+                return Ok(users);
+            }
+            return NoContent();
+        }
 
 
     }

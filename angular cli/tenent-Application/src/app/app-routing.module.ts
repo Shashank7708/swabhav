@@ -16,7 +16,7 @@ import {AppComponent} from './app.component';
 import {SuperadminComponent} from './LoginAndRegister/superadmin/superadmin.component';
 import {EditTenentComponent} from "./LoginAndRegister/edit-tenent/edit-tenent.component";
 import { AuthGuard } from './auth.guard';
-
+import {ShowfavouriteComponent} from './LoginAndRegister/showfavourite/showfavourite.component';
 
  const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,7 +24,8 @@ import { AuthGuard } from './auth.guard';
   {path:'secure/tenent/register',component:TenentRegisterComponent,canActivate:[AuthGuard]},
   {path:'secure/tenent/edit',component:EditTenentComponent,canActivate:[AuthGuard]},
   {path:'home',component:LoginComponent},
-  {path:"tenent/user-list",component:UserListComponent},
+  {path:"tenent/user-list",component:UserListComponent,canActivate:[AuthGuard]},
+  {path:"tenent/favouriteuser",component:ShowfavouriteComponent,canActivate:[AuthGuard]},
   {path:"tenent/user/show-contact",component:ShowComponent,canActivate:[AuthGuard]},
   {path:"tenent/user-register",component:UseRegisterComponent,canActivate:[AuthGuard]},
   {path:"tenent/user/edit",component:UserEditComponent,canActivate:[AuthGuard]},

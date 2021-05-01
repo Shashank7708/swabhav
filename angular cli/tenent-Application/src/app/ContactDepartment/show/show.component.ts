@@ -69,9 +69,12 @@ this.route.navigateByUrl("tenent/user/contatc/address");
 backtoList(){
   this.showlist=localStorage.getItem("show-list");
 if(this.showlist=="true"){
+  console.log('in showlist');
   this.route.navigateByUrl("/tenent/user-list");
 }
 else{
+  console.log('home');
+  this.service.logout();
   this.route.navigateByUrl("/home");
 }
 

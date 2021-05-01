@@ -1,6 +1,7 @@
 import { HttpErrorResponse, JsonpClientBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Contact } from 'src/app/ContactDepartment/contact';
 import { TenentService } from 'src/app/Servcices/tenent.service';
 import { Tenent } from '../tenent';
@@ -13,7 +14,7 @@ import { User } from '../User';
 })
 export class UserListComponent implements OnInit {
 
-  constructor(private service:TenentService,private route:Router) { }
+  constructor(private service:TenentService,private route:Router,private _toastr:ToastrService) { }
 users:User[]=[];
 count:any;
 tenent:Tenent=new Tenent();
@@ -62,11 +63,34 @@ dummydata=false;
     this.route.navigateByUrl("/tenent/user/show-contact");
   }
   logout(){
-    localStorage.removeItem('tenent');
-    localStorage.removeItem('user');
-    localStorage.removeItem('contact');
-    localStorage.removeItem('address');
-    this.route.navigateByUrl('/home');
+    this.service.logout();
   }
+
+  showfavourite(){
+    this.route.navigateByUrl('tenent/favouriteuser');
+  }
+
+Addfavourite(userId:any){
+  this.service.addfavourite(this.tenent.id,userId).subscribe(
+    res=>{
+      
+      console.log('added to favourite');
+      this._toastr.success('added to favourite')
+    },
+    err=>{
+      this._toastr.success('added to favourite')
+      console.log(err);
+      console.log('added to favourite');
+      if(err instanceof HttpErrorResponse){
+        if(err.status==401){
+          console.log("inside 401 not autorize")
+          this.service.logout();
+          this.route.navigateByUrl("");
+        }
+      }
+
+    }
+  )
+}
 
 }
