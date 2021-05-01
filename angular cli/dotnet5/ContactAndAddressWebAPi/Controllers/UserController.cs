@@ -1,6 +1,8 @@
 ﻿using ContactAddressCore.Model;
 using ContactAndAddressApp_data.Repository;
+using ContactAndAddressWebAPi.AuthentictionFlder;
 using ContactAndAddressWebAPi.DtoModel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -13,59 +15,66 @@ using System.Threading.Tasks;
 
 namespace ContactAndAddressWebAPi.Controllers
 {
-   
+  //  [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/v1/tenents")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        private IContactRepository _db;
-        public UserController(IContactRepository dbContext)
+        private ICustomTokenManager _tokenManager;
+        private IEfRespository<Tenent> _tenentRepo;
+        private IEfRespository<User> _Userrepo;
+        public UserController(ICustomTokenManager tokenManager,IContactRepository dbContext, IEfRespository<User> userrepo, IEfRespository<Tenent> tenentRepo)
         {
-            this._db = dbContext;
+            _tokenManager = tokenManager;
+            _tenentRepo = tenentRepo;
+            _Userrepo = userrepo;
         }
 
        
         [HttpPost]
         [Route("{tenentId}/user/register")]
         [EnableCors("CorsPolicy")]
-        public ActionResult<User> AddUser(DtoUser dtouser, string tenentId)
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult<User>> AddUser(DtoUser dtouser, Guid tenentId)
         {
             if (ModelState.IsValid)
             {
                 User user = new User { UserName = dtouser.UserName, Password = dtouser.Password, Role = dtouser.Role };
                 user.Id = new Guid();
-                user.Tenent = _db.GetTenent(Guid.Parse(tenentId));
-                this._db.AddUser(user);
+                user.Tenent =await this._tenentRepo.GetById(tenentId);
+              await this._Userrepo.Add(user);
                 return Ok(user);
             }
             return BadRequest("Not Posted User");
         }
      
         [HttpGet]
-        [Route("{tenentId}/user/{username}/{password}")]
+       [Route("{tenentId}/user/{username}/{password}")]
+
         [EnableCors("CorsPolicy")]
-        public ActionResult<User> GetUserAsPerId(string tenentId,string username,string password)
+        public async Task<ActionResult<dtoValidateUsercs>> GetUserAsPerId(Guid tenentId,string username,string password)
         {
             //EncryptAndDecrypt.ConvertToDecrypt(password)
+            if (tenentId.ToString() == null || username == null || password == null)
+                return BadRequest("Invalid UserName And Password");
+
             User validateUser = new User { UserName =username, Password =password };
-            var user = this._db.GetUser(Guid.Parse(tenentId),validateUser);
-            if (user != null)
-            {
-                return Ok(user);
-            }
-            else
-            {
-                return NotFound("No Such Tenet is Register");
-            }
+            User user = await this._Userrepo.FirstOrDefault(x => x.UserName == username && x.Password == password && x.Tenent.Id == tenentId);
+            if (user == null)
+                return BadRequest("No User Found");
+            dtoValidateUsercs token = _tokenManager.CreateToken(user,tenentId);
+            return Ok(token);
+           
             
         }
 
         [HttpGet]
         [Route("{tenentId}/user")]
         [EnableCors("CorsPolicy")]
-        public ActionResult<IQueryable<User>> GetUsersOfATenent(Guid tenentId)
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult<IEnumerable<User>>> GetUsersOfATenent(Guid tenentId)
         {
-            IQueryable<User> users=this._db.GetUsers(tenentId);
+            IEnumerable<User> users=await this._Userrepo.GetListBasedOnCondition(x=>x.Tenent.Id==tenentId);
             if (users.Count()>0)
             {
                 return Ok(users);
@@ -76,21 +85,19 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpPut]
         [Route("{tenentId}/user/{userId}/update")]
         [EnableCors("CorsPolicy")]
-        public ActionResult UpdateUser(Guid tenentId, Guid userId,DtoUser usertobeupdated)
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult> UpdateUser(Guid tenentId, Guid userId,DtoUser usertobeupdated)
         {
             try
             {
                 if (ModelState.IsValid)
                 { User userToCheckIfExist = new User { Id = userId };
-                    var user = this._db.GetUser(tenentId, userToCheckIfExist);
+                    var user =await this._Userrepo.FirstOrDefault(x=>x.Tenent.Id==tenentId&& x.Id==userId);
                     user.UserName = usertobeupdated.UserName;
                     user.Password = usertobeupdated.Password;
                     user.Role = usertobeupdated.Role;
-                    bool result = this._db.UpdateUser(user);
-                    if (result)
-                    {
-                        return Ok("User is Updated Successfully");
-                    }
+                    await this._Userrepo.update(user);
+                    return Ok("User is Updated Successfully");
                 }
             }
             catch (Exception e)
@@ -105,13 +112,15 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpDelete]
         [Route("{tenentId}/user/{userId}/delete")]
         [EnableCors("CorsPolicy")]
-        public ActionResult DeleteUser(Guid tenentId,Guid userId)
+        [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin" })]
+        public async Task<ActionResult> DeleteUser(Guid tenentId,Guid userId)
         {
             try
             {
-                bool result = this._db.DeleteUser(userId);
-                if (result)
+                User user=await this._Userrepo.FirstOrDefault(x=>x.Tenent.Id==tenentId && x.Id==userId);
+                if (user.UserName!=null)
                 {
+                   await this._Userrepo.Remove(user);
                     return Ok("User is deleted Successfully");
                 }
             

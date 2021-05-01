@@ -11,7 +11,7 @@ using ContactAndAddressWebAPi.Service;
 using Microsoft.AspNetCore.Cors;
 
 namespace ContactAndAddressWebAPi.Controllers
-{   /*
+{   
     [Route("api/authenticate")]
     
     [ApiController]
@@ -24,9 +24,10 @@ namespace ContactAndAddressWebAPi.Controllers
         }
         [HttpPost]
         [EnableCors("CorsPolicy")]
-        public IActionResult Post([FromBody] DtoUser dtouser)
+       
+        public async Task<ActionResult<dtoValidateUsercs>> Post([FromBody] DtoUser dtouser)
         {
-            var user = _authenticatservice.Authenticate(dtouser.UserName, dtouser.Password);
+            dtoValidateUsercs user =await _authenticatservice.Authenticate(dtouser.UserName, dtouser.Password);
             if (user == null)
             {
                 return BadRequest(new { message = "Username or Password in Incorrect" });
@@ -35,6 +36,6 @@ namespace ContactAndAddressWebAPi.Controllers
         }
         
     }
-    */
+    
 }
     

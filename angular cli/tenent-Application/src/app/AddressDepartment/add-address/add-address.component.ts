@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -37,8 +38,22 @@ ngOnInit(): void {
 }
 
 onSubmit(){
-  this.service.addaddress(this.tenent.id,this.user.id,this.contact.id,this.address).subscribe(data=>console.log(data));
-  this.BackToList();
+  this.service.addaddress(this.tenent.id,this.user.id,this.contact.id,this.address).subscribe(
+  data=>{
+    console.log(data),
+    this.BackToList()},
+  err=>{
+    console.log(err);
+    if(err instanceof HttpErrorResponse){
+      if(err.status==401){
+        console.log("inside 401 not autorize")
+        this.service.logout();
+        this.route.navigateByUrl("");
+      }
+    }
+  
+  });
+
 }
 
 BackToList(){    

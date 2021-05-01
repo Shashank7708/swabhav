@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -28,7 +29,18 @@ this.edittenent=new FormGroup({
   onSubmit(){
     console.log("hello "+this.tenent.name+" streingth: "+this.tenent.tenentStrength);
     this.service.updateTenent(this.tenent.id,this.tenent).subscribe(
-      res=>{console.log(res);this.route.navigateByUrl('secure/getalltenent')},err=>console.log(err),
+      res=>{console.log(res);this.route.navigateByUrl('secure/getalltenent')},
+      err=>{
+        console.log(err);
+        if(err instanceof HttpErrorResponse){
+          if(err.status==401){
+            console.log("inside 401 not autorize")
+            this.service.logout();
+            this.route.navigateByUrl("");
+          }
+        }
+      
+      },
     )
   
   }

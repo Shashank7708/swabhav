@@ -1,4 +1,4 @@
-import { JsonpClientBackend } from '@angular/common/http';
+import { HttpErrorResponse, JsonpClientBackend } from '@angular/common/http';
 import { Component, OnInit,Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -36,7 +36,18 @@ ngOnInit(): void {
 }
 public onSubmit(){
   
-  this.service.editcontact(this.tenent.id,this.user.id,this.contact).subscribe(data=>console.log(data));
+  this.service.editcontact(this.tenent.id,this.user.id,this.contact).subscribe(data=>{console.log(data)},
+  err=>{
+    console.log(err);
+    if(err instanceof HttpErrorResponse){
+      if(err.status==401){
+        console.log("inside 401 not autorize")
+        this.service.logout();
+        this._router.navigateByUrl("");
+      }
+    }
+  
+  });
   this._router.navigateByUrl("tenent/user/show-contact");
  }
 

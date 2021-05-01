@@ -12,6 +12,8 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using ContactAndAddressWebAPi.Service;
+using ContactAddressCore.Model;
+using ContactAndAddressWebAPi.AuthentictionFlder;
 
 namespace ContactAndAddressWebAPi
 {
@@ -47,32 +49,45 @@ namespace ContactAndAddressWebAPi
             });
             services.AddDbContext<ContactDbContext>(opt =>
               opt.UseSqlServer(Configuration.GetConnectionString("SamuraiConnex")));
-            services.AddTransient<IContactRepository, ContactRepository>();
-            /*
-            services.AddTransient<IAuthenticateService, Authenticateservice>();
-           
-            var appSettingSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingSection);
-            //jqt Authentication
-            var appSettings = appSettingSection.Get<AppSettings>();
-            var key = Encoding.ASCII.GetBytes(appSettings.key);
-            services.AddAuthentication(au =>
-            {
-                au.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                au.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(jwt=> {
-                jwt.RequireHttpsMetadata = false;
-                jwt.SaveToken = true;
-                jwt.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
 
-                };
-            });
-           */
+            services.AddTransient<IContactRepository, ContactRepository>();
+            services.AddTransient<IEfRespository<Tenent>, EfRepository<Tenent>>();
+            services.AddTransient<IEfRespository<User>, EfRepository<User>>();
+            services.AddTransient<IEfRespository<Contact>, EfRepository<Contact>>();
+            services.AddTransient<IEfRespository<Address>, EfRepository<Address>>();
+
+
+
+
+
+            
+         //   services.AddTransient<IAuthenticateService, Authenticateservice>();
+           
+          //  var appSettingSection = Configuration.GetSection("AppSettings");
+          //  services.Configure<AppSettings>(appSettingSection);
+            services.AddSingleton<ICustomTokenManager, SampleJwtTokenManager>();
+            services.AddControllers();
+            services.AddScoped<SampleJwtAuthorization>();
+            //jqt Authentication
+            /*  var appSettings = appSettingSection.Get<AppSettings>();
+              var key = Encoding.ASCII.GetBytes(appSettings.key);
+              services.AddAuthentication(au =>
+              {
+                  au.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                  au.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+              }).AddJwtBearer(jwt=> {
+                  jwt.RequireHttpsMetadata = false;
+                  jwt.SaveToken = true;
+                  jwt.TokenValidationParameters = new TokenValidationParameters
+                  {
+                      ValidateIssuerSigningKey = true,
+                      IssuerSigningKey = new SymmetricSecurityKey(key),
+                      ValidateIssuer = false,
+                      ValidateAudience = false
+
+                  };
+              });
+             */
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ContactAndAddressWebAPi", Version = "v1" });

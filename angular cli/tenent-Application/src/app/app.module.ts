@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { EditComponent } from './ContactDepartment/edit/edit.component';
 import { AddComponent } from './ContactDepartment/add/add.component';
 import { ShowComponent } from './ContactDepartment/show/show.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NotFoundComponentComponent } from './NotFound/not-found-component/not-found-component.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ShowAddressComponent } from './AddressDepartment/show-address/show-address.component';
@@ -23,7 +23,9 @@ import { SuperadminComponent } from './LoginAndRegister/superadmin/superadmin.co
 import { EditTenentComponent } from './LoginAndRegister/edit-tenent/edit-tenent.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthGuard } from './auth.guard';
-
+import {TokenInterceptorService} from './token-interceptor.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,9 +52,21 @@ import { AuthGuard } from './auth.guard';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut:2000,
+      positionClass:'toast-top-right',
+      preventDuplicates:false,
+    })
   ],
-  providers: [TenentService,AuthGuard],
+  providers: [TenentService,AuthGuard,
+    {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

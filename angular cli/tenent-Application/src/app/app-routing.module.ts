@@ -24,7 +24,7 @@ import { AuthGuard } from './auth.guard';
   {path:'secure/tenent/register',component:TenentRegisterComponent,canActivate:[AuthGuard]},
   {path:'secure/tenent/edit',component:EditTenentComponent,canActivate:[AuthGuard]},
   {path:'home',component:LoginComponent},
-  {path:"tenent/user-list",component:UserListComponent,canActivate:[AuthGuard]},
+  {path:"tenent/user-list",component:UserListComponent},
   {path:"tenent/user/show-contact",component:ShowComponent,canActivate:[AuthGuard]},
   {path:"tenent/user-register",component:UseRegisterComponent,canActivate:[AuthGuard]},
   {path:"tenent/user/edit",component:UserEditComponent,canActivate:[AuthGuard]},

@@ -20,11 +20,18 @@ export class TenentService {
 _url="http://localhost:57364/api/v1/tenents/";
 
 loggedIn(){
-  return  !!localStorage.getItem('token');
+  return  !!sessionStorage.getItem('loggedin');
 }
 
 logout(){
-  localStorage.removeItem('token');
+  //localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('loggedin');
+  localStorage.removeItem('tenent');
+  localStorage.removeItem('contact'),
+  localStorage.removeItem('address'),
+  localStorage.removeItem('show-list')
   this.route.navigateByUrl('');
 }
 
@@ -37,13 +44,13 @@ addTenent(tenent:TenentUser){
 }
 
 getAParticularTenent(tenentName:any):Observable<any>{
-  return this.http.get<any>(this._url+""+tenentName+"/getIdBasedOnname");
+  return this.http.get<any>(this._url+""+tenentName+"/getIdBasedOnname", { headers: { 'token': '' }});
 }
 
 
 
-getUser(tenentid:any,username:any,password:any):Observable<User>{
-  return this.http.get<User>(this._url+""+tenentid+"/user/"+username+"/"+password);
+getUser(tenentid:any,username:any,password:any):Observable<any>{
+  return this.http.get<any>(this._url+""+tenentid+"/user/"+username+"/"+password,{ headers: { 'token': '' }});
 }
 addUser(tenentid:any,user:TenentUser,role:any){
 

@@ -1,6 +1,8 @@
 ﻿using ContactAddressCore.Model;
 using ContactAndAddressApp_data.Repository;
+using ContactAndAddressWebAPi.AuthentictionFlder;
 using ContactAndAddressWebAPi.DtoModel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -11,30 +13,37 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace ContactAndAddressWebAPi.Controllers
-{   
+{
+  //  [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin", "normal", "user" })]
     [Route("api/v1/tenents")]
     [ApiController]
     public class AddressController : ControllerBase
     {
         private IContactRepository _db;
-        public AddressController(IContactRepository dbContext)
+        private IEfRespository<Contact> _contactrepo;
+        private IEfRespository<Address> _addressrepo;
+        public AddressController(IContactRepository dbContext,IEfRespository<Contact> contactrepo,IEfRespository<Address> addressrepo)
         {
             this._db = dbContext;
+            this._contactrepo = contactrepo;
+            this._addressrepo = addressrepo;
         }
 
         
         [HttpPost]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address/register")]
-        public ActionResult<Address> PostAddress(DtoAddress dtoaddress,Guid tenentId,Guid userId,Guid contactId)
+        public async Task<ActionResult<Address>> PostAddress(DtoAddress dtoaddress,Guid tenentId,Guid userId,Guid contactId)
         {
             if (ModelState.IsValid)
             {
                 Address address = new Address { City = dtoaddress.City,State=dtoaddress.State,Country=dtoaddress.Country };
                 address.Id = new Guid();
-                address.Contact = this._db.GetContactAsPerId(tenentId,userId,contactId);
+                address.Contact = await this._contactrepo.FirstOrDefault(x => x.Id ==contactId && x.User.Id == userId && x.User.Tenent.Id==tenentId);
 
-                this._db.AddAddress(address);
+
+               await this._addressrepo.Add(address);
                 return Ok("Post Successfully");
             }
 
@@ -44,9 +53,10 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpGet]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address")]
-        public ActionResult<IQueryable<Address>> GetAddress(Guid tenentId,Guid userId,Guid contactId)
+        public async Task<ActionResult<List<Address>>> GetAddress(Guid tenentId,Guid userId,Guid contactId)
         {
-            IQueryable<Address> addresses= this._db.GetAddresss(tenentId,userId,contactId);
+            IEnumerable<Address> addresses=await this._addressrepo.GetListBasedOnCondition(x=>x.Contact.Id==contactId && x.Contact.User.Id==userId
+                                                                                        && x.Contact.User.Tenent.Id==tenentId);
             if (addresses.Count() > 0)
             {
                 return Ok(addresses);
@@ -61,9 +71,10 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpGet]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address/{addressId}")]
-        public ActionResult<Address> GetAAddress(Guid addressId,Guid tenentId,Guid contactId,Guid userId)
+        public async Task<ActionResult<Address>> GetAAddress(Guid addressId,Guid tenentId,Guid contactId,Guid userId)
         {
-           Address address= this._db.GetAddres(tenentId,userId,contactId,addressId);
+           Address address=await this._addressrepo.FirstOrDefault(x=>x.Id==addressId && x.Contact.Id==contactId
+                                                                     && x.Contact.User.Id==userId && x.Contact.User.Tenent.Id==tenentId);
             if (address.City != null)
             {
                 return Ok(address);
@@ -74,19 +85,20 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpPut]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address/{addressId}/edit")]
-        public ActionResult PutAddress(Guid addressId, Guid tenentId, Guid contactId, Guid userId,DtoAddress dtoAddress)
+        public async Task<ActionResult> PutAddress(Guid addressId, Guid tenentId, Guid contactId, Guid userId,DtoAddress dtoAddress)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && (await this._addressrepo.FirstOrDefault(x => x.Id == addressId && x.Contact.Id == contactId
+                                                                       && x.Contact.User.Id == userId && x.Contact.User.Tenent.Id == tenentId))!=null)
             {
-                Address address = this._db.GetAddres(tenentId, userId, contactId, addressId);
+                Address address = await this._addressrepo.FirstOrDefault(x => x.Id == addressId && x.Contact.Id == contactId
+                                                                      && x.Contact.User.Id == userId && x.Contact.User.Tenent.Id == tenentId);
+
                 address.Country = dtoAddress.Country;
                 address.State = dtoAddress.State;
                 address.City = dtoAddress.City;
-                bool result = this._db.UpdateAddress(address);
-                if (result)
-                {
-                    return Ok("Successfully Updated");
-                }
+                await this._addressrepo.update(address);
+                return Ok("Successfully Updated");
+               
             }
             return BadRequest("Not Updated Successfully");
         }
@@ -95,11 +107,14 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpDelete]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address/{addressId}/delete")]
-        public ActionResult DeleteAddress(Guid addressId, Guid tenentId, Guid contactId, Guid userId)
+        public async Task<ActionResult> DeleteAddress(Guid addressId, Guid tenentId, Guid contactId, Guid userId)
         {
-            bool result = this._db.DeleteAddress(addressId);
-            if (result)
+            if (await this._addressrepo.FirstOrDefault(x => x.Id == addressId && x.Contact.Id == contactId
+                                                                        && x.Contact.User.Id == userId && x.Contact.User.Tenent.Id == tenentId)!= null)
             {
+                Address address = await this._addressrepo.FirstOrDefault(x => x.Id == addressId && x.Contact.Id == contactId
+                                                                          && x.Contact.User.Id == userId && x.Contact.User.Tenent.Id == tenentId);
+                await this._addressrepo.Remove(address);
                 return Ok("Deleted Successfully");
             }
             return BadRequest("Not Deleted");

@@ -5,6 +5,8 @@ using System.Text;
 using ContactAddressCore.Model;
 using System.Collections;
 using System.Linq;
+using System.Threading.Tasks;
+
 namespace ContactAndAddressApp_data.Repository
 
 {
@@ -17,29 +19,28 @@ namespace ContactAndAddressApp_data.Repository
         }
 
        
-        public bool AddTenent(Tenent tenent)
+        public async Task<bool> AddTenent(Tenent tenent)
         {
             this._db.Tenents.Add(tenent);
-            this._db.SaveChanges();
+            await this._db.SaveChangesAsync();
 
             return true;
         }
 
 
-        public Tenent GetTenent(Guid id)
+        public async Task<Tenent> GetTenent(Guid id)
         {
-            Tenent tenent = this._db.Tenents.FirstOrDefault(x=>x.Id==id);
-            return tenent;
+            return await this._db.Tenents.FirstOrDefaultAsync(x => x.Id == id);           
         }
 
-        public IQueryable<Tenent> GetTenents()
-        {
-            IQueryable<Tenent> tenents = this._db.Tenents.AsQueryable();
-            return tenents;
+        public async Task<List<Tenent>> GetTenents()
+        {  
+               return await this._db.Tenents.ToListAsync(); 
+            
         }
-        public Tenent GetTenentbasedonName(string name)
+        public async Task<Tenent> GetTenentbasedonName(string name)
         {
-            Tenent tenent = this._db.Tenents.SingleOrDefault(x => x.Name.Equals(name));
+            Tenent tenent =await this._db.Tenents.SingleOrDefaultAsync(x => x.Name.Equals(name));
             if (tenent == null)
             {
                 return null; 
@@ -47,20 +48,20 @@ namespace ContactAndAddressApp_data.Repository
             return tenent;
         }
 
-        public bool UpdateTenent(Tenent tenentToBeUpdated)
+        public async Task<bool> UpdateTenent(Tenent tenentToBeUpdated)
         {
-            Tenent tenent = this._db.Tenents.SingleOrDefault(x => x.Id == tenentToBeUpdated.Id);
+            Tenent tenent =await this._db.Tenents.SingleOrDefaultAsync(x => x.Id == tenentToBeUpdated.Id);
             tenent.Name = tenentToBeUpdated.Name;
             tenent.TenentStrength = tenentToBeUpdated.TenentStrength;
-            this._db.SaveChanges();
+          await this._db.SaveChangesAsync();
             return true;
         }
-        public bool DeleteTenent(Guid tenentid)
+        public async Task<bool> DeleteTenent(Guid tenentid)
         {
-            Tenent tenent = this._db.Tenents.SingleOrDefault(x => x.Id == tenentid);
-            List<User> users = this._db.Users.Where(x => x.Tenent.Id == tenent.Id).ToList();
-            List<Contact> contacts = this._db.Contacts.Where(x => x.User.Tenent.Id == tenent.Id).ToList();
-            List<Address> addresses = this._db.Address.Where(x => x.Contact.User.Tenent.Id == tenent.Id).ToList();
+            Tenent tenent =await this._db.Tenents.SingleOrDefaultAsync(x => x.Id == tenentid);
+            List<User> users =await this._db.Users.Where(x => x.Tenent.Id == tenent.Id).ToListAsync();
+            List<Contact> contacts =await this._db.Contacts.Where(x => x.User.Tenent.Id == tenent.Id).ToListAsync();
+            List<Address> addresses =await this._db.Address.Where(x => x.Contact.User.Tenent.Id == tenent.Id).ToListAsync();
             foreach (var address in addresses)
             {
                 this._db.Address.Remove(address);
@@ -74,47 +75,43 @@ namespace ContactAndAddressApp_data.Repository
                 this._db.Users.Remove(user);
             }
             this._db.Tenents.Remove(tenent);
-            this._db.SaveChanges();
+           await this._db.SaveChangesAsync();
             return true;
         }
-        public bool AddUser(User user)
+        public async Task<bool> AddUser(User user)
         {
             this._db.Users.Add(user);
-          this._db.SaveChanges();
+         await this._db.SaveChangesAsync();
            return true;
         }
  
-       
-       
+    
 
-        public IQueryable<User> GetUsers(Guid tenetid)
+        public async Task<List<User>> GetUsers(Guid tenetid)
         {
-            IQueryable<User> users = this._db.Users.Include(x=>x.Contacts)
-                                                   .Where(x => x.Tenent.Id == tenetid).AsQueryable();
-         
-            return users;
+           return await this._db.Users.Where(x => x.Tenent.Id == tenetid).ToListAsync();            
         }
-        public bool UpdateUser(User userToBeUpdated)
+        public async Task<bool> UpdateUser(User userToBeUpdated)
         {
-            User user = this._db.Users.SingleOrDefault(x => x.Id == userToBeUpdated.Id);
+            User user =await this._db.Users.SingleOrDefaultAsync(x => x.Id == userToBeUpdated.Id);
             user.Role = userToBeUpdated.Role;
             user.UserName = userToBeUpdated.UserName;
             user.Password = userToBeUpdated.Password;
-            this._db.SaveChanges();
+           await this._db.SaveChangesAsync();
             return true;
         }
-        public User GetUser(Guid tenentid,User validateuser)
+        public async Task<User> GetUser(Guid tenentid,User validateuser)
         {
             User user;
             if (validateuser.UserName != null)
             {
-                 user = this._db.Users.SingleOrDefault(usr => usr.UserName.Equals(validateuser.UserName) &&
+                 user =await this._db.Users.SingleOrDefaultAsync(usr => usr.UserName.Equals(validateuser.UserName) &&
                                                                   usr.Password.Equals(validateuser.Password) &&
                                                                   usr.Tenent.Id == tenentid);
             }
             else
             {
-                 user = this._db.Users.SingleOrDefault(usr => usr.Id==validateuser.Id &&
+                 user =await this._db.Users.SingleOrDefaultAsync(usr => usr.Id==validateuser.Id &&
                                                                  usr.Tenent.Id == tenentid);
             }
             if (user == null)
@@ -123,20 +120,20 @@ namespace ContactAndAddressApp_data.Repository
             }
             return user;
         }
-        public User ValidateUser(string username, string password)
+        public async Task<User> ValidateUser(string username, string password)
         {
-            User user = this._db.Users.SingleOrDefault(x => x.UserName == username && x.Password == password);
+            User user =await this._db.Users.SingleOrDefaultAsync(x => x.UserName == username && x.Password == password);
             if (user == null)
             {
                 return null;
             }
             return user;
         }
-        public bool DeleteUser(Guid userid)
+        public async Task<bool> DeleteUser(Guid userid)
         {
             User user = this._db.Users.SingleOrDefault(x => x.Id == userid);
-            List<Contact> contacts = this._db.Contacts.Where(x => x.User.Id == user.Id).ToList();
-            List<Address> addresses = this._db.Address.Where(x => x.Contact.User.Id == user.Id).ToList();
+            List<Contact> contacts =await this._db.Contacts.Where(x => x.User.Id == user.Id).ToListAsync();
+            List<Address> addresses =await this._db.Address.Where(x => x.Contact.User.Id == user.Id).ToListAsync();
             foreach (var address in addresses)
             {
                 this._db.Address.Remove(address);
@@ -146,67 +143,69 @@ namespace ContactAndAddressApp_data.Repository
                 this._db.Contacts.Remove(contact);
             }
             this._db.Users.Remove(user);
-            this._db.SaveChanges();
+          await this._db.SaveChangesAsync();
             return true;
 
         }
 
-        public void AddContact(Contact contact)
+        public async Task<bool> AddContact(Contact contact)
         {
             this._db.Contacts.Add(contact);
-            this._db.SaveChanges();
+            await this._db.SaveChangesAsync();
+            return true;
         }
-        public Contact GetContactAsPerId(Guid tenetid, Guid userid, Guid contactid)
+        public async Task<Contact> GetContactAsPerId(Guid tenetid, Guid userid, Guid contactid)
         {
-            var contact = this._db.Contacts.Include(x => x.Address).SingleOrDefault(x => x.Id == contactid && x.User.Id == userid);
+            var contact =await this._db.Contacts.Include(x => x.Address).SingleOrDefaultAsync(x => x.Id == contactid && x.User.Id == userid);
             return contact;
         }
-        public IQueryable<Contact> GetContacts(Guid tenetid, Guid userid)
+        public async Task<List<Contact>> GetContacts(Guid tenetid, Guid userid)
         {
-            IQueryable<Contact> contacts = this._db.Contacts.Include(contact => contact.Address).Where(x => x.User.Id == userid && x.User.Tenent.Id == tenetid);
+            List<Contact> contacts =await this._db.Contacts.Include(contact => contact.Address).Where(x => x.User.Id == userid && x.User.Tenent.Id == tenetid).ToListAsync();
             return contacts;
         }
 
-        public bool UpdateContact(Contact toUpdatecontact)
+        public async Task<bool> UpdateContact(Contact toUpdatecontact)
         {
-            Contact contact = this._db.Contacts.SingleOrDefault(x => x.Id == toUpdatecontact.Id);
+            Contact contact =await this._db.Contacts.SingleOrDefaultAsync(x => x.Id == toUpdatecontact.Id);
             contact.Name = toUpdatecontact.Name;
             contact.Mobileno = toUpdatecontact.Mobileno;
-            this._db.SaveChanges();
+           await this._db.SaveChangesAsync();
             return true;
         }
-        public bool DeleteContact(Guid id)
+        public async Task<bool> DeleteContact(Guid id)
         {
-            Contact contact = this._db.Contacts.SingleOrDefault(x => x.Id == id);
-            List<Address> addresses = this._db.Address.Where(x => x.Contact.Id == contact.Id).ToList();
+            Contact contact =await this._db.Contacts.SingleOrDefaultAsync(x => x.Id == id);
+            List<Address> addresses =await this._db.Address.Where(x => x.Contact.Id == contact.Id).ToListAsync();
             foreach (var address in addresses)
             {
                 this._db.Address.Remove(address);
             }
             this._db.Contacts.Remove(contact);
-            this._db.SaveChanges();
+            await this._db.SaveChangesAsync();
             return true;
 
         }
 
-        public void AddAddress(Address address)
+        public async Task<bool> AddAddress(Address address)
         {
             this._db.Address.Add(address);
-            this._db.SaveChanges();
+            await this._db.SaveChangesAsync();
+            return true;
         }
 
-        public IQueryable<Address> GetAddresss(Guid tenetid, Guid userid, Guid contactid)
+        public async Task<List<Address>> GetAddresss(Guid tenetid, Guid userid, Guid contactid)
         {
-            IQueryable<Address> address = this._db.Address.Where(x => x.Contact.Id == contactid && x.Contact.User.Id==userid && x.Contact.User.Tenent.Id==tenetid).AsQueryable();
+            List<Address> address =await this._db.Address.Where(x => x.Contact.Id == contactid && x.Contact.User.Id==userid && x.Contact.User.Tenent.Id==tenetid).ToListAsync();
             return address;
         }
 
     
 
     
-        public Address GetAddres(Guid tenetid,Guid userid,Guid contactid,Guid addressId)
+        public async Task<Address> GetAddres(Guid tenetid,Guid userid,Guid contactid,Guid addressId)
         {
-            var address = this._db.Address.SingleOrDefault(x => x.Id == addressId && x.Contact.Id==contactid && x.Contact.User.Id==userid && x.Contact.User.Tenent.Id==tenetid);
+            var address =await this._db.Address.SingleOrDefaultAsync(x => x.Id == addressId && x.Contact.Id==contactid && x.Contact.User.Id==userid && x.Contact.User.Tenent.Id==tenetid);
             return address;
         }
 
@@ -215,22 +214,22 @@ namespace ContactAndAddressApp_data.Repository
 
        
 
-        public bool UpdateAddress(Address addresstoupdate)
+        public async Task<bool> UpdateAddress(Address addresstoupdate)
         {
-            Address address = this._db.Address.SingleOrDefault(x => x.Id == addresstoupdate.Id);
+            Address address =await this._db.Address.SingleOrDefaultAsync(x => x.Id == addresstoupdate.Id);
             address.Country = addresstoupdate.Country;
             address.State = addresstoupdate.State;
             address.City = addresstoupdate.City;
-            this._db.SaveChanges();
+            await this._db.SaveChangesAsync();
             return true;
         }
 
-        public bool DeleteAddress(Guid id)
+        public async Task<bool> DeleteAddress(Guid id)
         {
-            Address address = this._db.Address.SingleOrDefault(x => x.Id == id);
+            Address address =await this._db.Address.SingleOrDefaultAsync(x => x.Id == id);
         
             this._db.Address.Remove(address);
-            this._db.SaveChanges();
+           await this._db.SaveChangesAsync();
             return true;
         }
 

@@ -1,4 +1,5 @@
 import { state } from '@angular/animations';
+import { HttpErrorResponse } from '@angular/common/http';
 import { ConvertActionBindingResult } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -39,7 +40,19 @@ export class ShowAddressComponent implements OnInit {
   }
   deleteClick(addressid:any){
    this.service.deleteaddress(this.tenent.id,this.user.id,this.contact.id,addressid).subscribe(
-     res=>{console.log(res)},err=>console.log(err)
+     res=>{console.log(res),this.backtocontactlist()},
+     err=>{
+      console.log(err);
+      if(err instanceof HttpErrorResponse){
+        if(err.status==401){
+          console.log("inside 401 not autorize")
+          this.service.logout();
+          this.route.navigateByUrl("");
+        }
+      }
+    
+    }
+     
    )
   }
   addClick(){

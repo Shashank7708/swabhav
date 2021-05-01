@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit,Input,Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { disableDebugTools } from '@angular/platform-browser';
@@ -35,8 +36,19 @@ ngOnInit(): void {
 }
 public onSubmit(){
   
-  this.service.addcontact(this.tenent.id,this.user.id,this.contact).subscribe(data=>console.log(data));
-  this._router.navigateByUrl("tenent/user/show-contact");
+  this.service.addcontact(this.tenent.id,this.user.id,this.contact).subscribe(data=>{console.log(data),this._router.navigateByUrl("tenent/user/show-contact");},
+  err=>{
+    console.log(err);
+    if(err instanceof HttpErrorResponse){
+      if(err.status==401){
+        console.log("inside 401 not autorize")
+        this.service.logout();
+        this._router.navigateByUrl("");
+      }
+    }
+  
+  });
+  
  }
 
 }

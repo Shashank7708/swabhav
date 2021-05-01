@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TenentService } from 'src/app/Servcices/tenent.service';
@@ -14,7 +15,20 @@ export class SuperadminComponent implements OnInit {
 tenents:Tenent[]=[];
   ngOnInit(): void {
     this.service.getalltenent().subscribe(
-      res=>{this.tenents=res,console.log(res)},err=>console.log(err),
+      res=>{this.tenents=res,console.log(res)},
+      err=>{
+        console.log(err);
+        if(err instanceof HttpErrorResponse){
+          if(err.status==401){
+            console.log("inside 401 not autorize")
+            this.service.logout();
+            this.route.navigateByUrl("");
+
+
+          }
+        }
+      
+      },
     )
   }
 

@@ -10,25 +10,26 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using ContactAndAddressApp_data.Repository;
+using ContactAndAddressWebAPi.DtoModel;
 
 namespace ContactAndAddressWebAPi.Service
 {
-    public class Authenticateservice
+    public class Authenticateservice:IAuthenticateService
     {
-       /*
-
+       
         public readonly AppSettings _appSettings;
-        public readonly IContactRepository _db;
-        public Authenticateservice(IOptions<AppSettings> appSettings,IContactRepository db)
+        public readonly IEfRespository<User> _db;
+        public Authenticateservice(IOptions<AppSettings> appSettings,IEfRespository<User> db)
         {
             _appSettings = appSettings.Value;
             this._db = db;
         }
 
        
-        public User Authenticate(string userName, string password)
+        public async Task<dtoValidateUsercs> Authenticate(string userName, string password)
         {
-            var user = this._db.ValidateUser(userName, password);
+            User user =await this._db.FirstOrDefault(x => x.UserName == userName && x.Password == password);
+            dtoValidateUsercs dtouser = new dtoValidateUsercs { UserName = user.UserName, Password = user.Password };
             //return null if user not fond;
             if (user == null)
                 return null;
@@ -46,11 +47,12 @@ namespace ContactAndAddressWebAPi.Service
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenhandler.CreateToken(tokenDescriptor);
+            dtouser.Token = tokenhandler.WriteToken(token);
             
-            user.Password = null;
-            return user;
+             dtouser.Password= null;
+            return dtouser;
         }
-       */
+       
     }
 
 }

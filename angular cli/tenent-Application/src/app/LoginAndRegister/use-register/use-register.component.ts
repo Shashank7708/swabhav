@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -30,7 +31,17 @@ FindCompanyOfUser(companyName:string){
             { console.log("inside disable")
               this.disableButton=false;
             } 
-         }
+         },
+         err=>{
+          console.log(err);
+          if(err instanceof HttpErrorResponse){
+            if(err.status==401){
+              console.log("inside 401 not autorize")
+              this.route.navigateByUrl("");
+            }
+          }
+        
+        }
   );
 }
 
@@ -50,8 +61,19 @@ FindCompanyOfUser(companyName:string){
     this.service.addUser(this.tenent.id,this.user,this.role).subscribe
     (res=>{console.log(res);
             this.backtoList();
-    },err=>console.log(err));
-
+    },
+    err=>{
+      console.log(err);
+      if(err instanceof HttpErrorResponse){
+        if(err.status==401){
+          console.log("inside 401 not autorize")
+          this.service.logout();
+          this.route.navigateByUrl("");
+        }
+      }
+    
+    }
+    )
   }
   backtoList(){
     this.route.navigateByUrl("/tenent/user-list");

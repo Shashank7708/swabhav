@@ -1,4 +1,4 @@
-import { JsonpClientBackend } from '@angular/common/http';
+import { HttpErrorResponse, JsonpClientBackend } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contact } from 'src/app/ContactDepartment/contact';
@@ -23,7 +23,19 @@ ngOnInit(): void {
   this.shownavbar=localStorage.getItem('show-list');
   this.service.getUserOftenent(this.tenent.id).subscribe(
     res=>{this.users=res,console.log(res),console.log(this.users.length),
-          this.count=this.users.length},err=>console.log(err),
+          this.count=this.users.length},
+    err=>{
+            console.log(err);
+            if(err instanceof HttpErrorResponse){
+              if(err.status==401){
+                console.log("inside 401 not autorize")
+                this.service.logout();
+                this.route.navigateByUrl("");
+              }
+            }
+          
+          }
+          
   )
   
   }

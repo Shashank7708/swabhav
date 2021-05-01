@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -36,8 +37,27 @@ this.addtenent=new FormGroup({
       this.service.addUser(this.Tenent.id,this.tenent,this.Role).subscribe(res=>{
         console.log(res);
         this.route.navigateByUrl('/secure/getalltenent');;
-       },err=>console.log(err));
-      },err=>console.log(err));
+       },err=>{
+        console.log(err);
+        if(err instanceof HttpErrorResponse){
+          if(err.status==401){
+            console.log("inside 401 not autorize")
+            this.route.navigateByUrl("");
+          }
+        }
+      
+      });
+      },err=>{
+        console.log(err);
+        if(err instanceof HttpErrorResponse){
+          if(err.status==401){
+            console.log("inside 401 not autorize")
+            this.service.logout();
+            this.route.navigateByUrl("");
+          }
+        }
+      
+      });
   
   }
 
