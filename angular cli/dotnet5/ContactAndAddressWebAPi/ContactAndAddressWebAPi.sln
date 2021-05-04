@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactAndAddressApp_data",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactAddressCore", "..\ContactAddressCore\ContactAddressCore.csproj", "{F41E7860-DB93-4361-A4E5-A855F33FE148}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenentApplicationTest", "..\TenentApplicationTest\TenentApplicationTest.csproj", "{57D9709C-5A4F-4621-8001-B9C1A0D3A6BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F41E7860-DB93-4361-A4E5-A855F33FE148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F41E7860-DB93-4361-A4E5-A855F33FE148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F41E7860-DB93-4361-A4E5-A855F33FE148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57D9709C-5A4F-4621-8001-B9C1A0D3A6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57D9709C-5A4F-4621-8001-B9C1A0D3A6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57D9709C-5A4F-4621-8001-B9C1A0D3A6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57D9709C-5A4F-4621-8001-B9C1A0D3A6BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

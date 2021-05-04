@@ -15,17 +15,17 @@ using System.Threading.Tasks;
 namespace ContactAndAddressWebAPi.Controllers
 {
   //  [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin", "normal", "user" })]
+   // [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin", "normal", "user" })]
     [Route("api/v1/tenents")]
     [ApiController]
     public class AddressController : ControllerBase
     {
-        private IContactRepository _db;
+       
         private IEfRespository<Contact> _contactrepo;
         private IEfRespository<Address> _addressrepo;
-        public AddressController(IContactRepository dbContext,IEfRespository<Contact> contactrepo,IEfRespository<Address> addressrepo)
+        public AddressController(IEfRespository<Contact> contactrepo,IEfRespository<Address> addressrepo)
         {
-            this._db = dbContext;
+            
             this._contactrepo = contactrepo;
             this._addressrepo = addressrepo;
         }
@@ -34,7 +34,7 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpPost]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address/register")]
-        public async Task<ActionResult<Address>> PostAddress(DtoAddress dtoaddress,Guid tenentId,Guid userId,Guid contactId)
+        public async Task<ActionResult> PostAddress(DtoAddress dtoaddress,Guid tenentId,Guid userId,Guid contactId)
         {
             if (ModelState.IsValid)
             {
@@ -55,16 +55,13 @@ namespace ContactAndAddressWebAPi.Controllers
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address")]
         public async Task<ActionResult<List<Address>>> GetAddress(Guid tenentId,Guid userId,Guid contactId)
         {
-            IEnumerable<Address> addresses=await this._addressrepo.GetListBasedOnCondition(x=>x.Contact.Id==contactId && x.Contact.User.Id==userId
-                                                                                        && x.Contact.User.Tenent.Id==tenentId);
-            if (addresses.Count() > 0)
-            {
-                return Ok(addresses);
-            }
-            else
-            {
-                return NoContent();
-            }
+            if (await _contactrepo.FirstOrDefault(x => x.Id == contactId && x.User.Id == userId && x.User.Tenent.Id == tenentId) == null)
+                return BadRequest("not found");
+            List<Address> addresses=(await this._addressrepo.GetListBasedOnCondition(x=>x.Contact.Id==contactId && x.Contact.User.Id==userId
+                                                                                        && x.Contact.User.Tenent.Id==tenentId)).ToList();
+            
+                return addresses;
+            
         }
 
 
@@ -75,7 +72,7 @@ namespace ContactAndAddressWebAPi.Controllers
         {
            Address address=await this._addressrepo.FirstOrDefault(x=>x.Id==addressId && x.Contact.Id==contactId
                                                                      && x.Contact.User.Id==userId && x.Contact.User.Tenent.Id==tenentId);
-            if (address.City != null)
+            if (address != null)
             {
                 return Ok(address);
             }
@@ -109,6 +106,7 @@ namespace ContactAndAddressWebAPi.Controllers
         [Route("{tenentId}/users/{userId}/contact/{contactId}/address/{addressId}/delete")]
         public async Task<ActionResult> DeleteAddress(Guid addressId, Guid tenentId, Guid contactId, Guid userId)
         {
+            
             if (await this._addressrepo.FirstOrDefault(x => x.Id == addressId && x.Contact.Id == contactId
                                                                         && x.Contact.User.Id == userId && x.Contact.User.Tenent.Id == tenentId)!= null)
             {

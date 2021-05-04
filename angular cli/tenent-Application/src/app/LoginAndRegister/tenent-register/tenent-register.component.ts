@@ -47,16 +47,6 @@ this.addtenent=new FormGroup({
         }
       
       });
-      },err=>{
-        console.log(err);
-        if(err instanceof HttpErrorResponse){
-          if(err.status==401){
-            console.log("inside 401 not autorize")
-            this.service.logout();
-            this.route.navigateByUrl("");
-          }
-        }
-      
       });
   
   }

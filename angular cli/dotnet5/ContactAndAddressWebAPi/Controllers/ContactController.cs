@@ -18,14 +18,14 @@ namespace ContactAndAddressWebAPi.Controllers
 
     [Route("api/v1/tenents")]
     [ApiController]
-    [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin","normal","user" })]
+  //  [SampleJwtAuthorization(Role = new string[] { "superadmin", "Admin","normal","user" })]
     public class ContactController : ControllerBase
     {
       
         private IEfRespository<Tenent> _tenentRepo;
         private IEfRespository<User> _userRepo;
         private IEfRespository<Contact> _contactRepo;
-        public ContactController(IEfRespository<User> userrepo, IEfRespository<Tenent> tenentRepo,IEfRespository<Contact> contactrepo)
+        public ContactController(IEfRespository<Tenent> tenentRepo, IEfRespository<User> userrepo,IEfRespository<Contact> contactrepo)
         {
             
             this._tenentRepo = tenentRepo;
@@ -37,8 +37,10 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpPost] 
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/register")]
-        public async Task<ActionResult<Contact>> PostContact(DtoContact dtocontact,Guid tenentId,Guid userId)
+        public async Task<ActionResult> PostContact(DtoContact dtocontact,Guid tenentId,Guid userId)
         {
+            if (await _userRepo.FirstOrDefault(x => x.Tenent.Id == tenentId && x.Id == userId) == null)
+                return BadRequest("tenent or user not found");
             if (ModelState.IsValid)
             {
                 Contact contact = new Contact { Name = dtocontact.Name, Mobileno = dtocontact.MobileNo };
@@ -70,32 +72,38 @@ namespace ContactAndAddressWebAPi.Controllers
         [Route("{tenentId}/users/{userId}/contacts")]
         public async Task<ActionResult<List<Contact>>> GetAllContact( Guid tenentId,Guid userId)
         {
-          IEnumerable<Contact> contacts=await this._contactRepo.GetListBasedOnCondition(x=>x.User.Tenent.Id==tenentId && x.User.Id==userId);
-            if (contacts.Count() > 0)
-            {
-                return Ok(contacts);
-            }
-            else
-            {
-                return NoContent();
-            }
+            if (await _tenentRepo.GetById(tenentId) == null)
+                return BadRequest("tenent not found");
+            if (await _userRepo.GetById(userId) == null)
+                return BadRequest("user not found");
+          List<Contact> contacts=(await this._contactRepo.GetListBasedOnCondition(
+                                                          x=>x.User.Tenent.Id==tenentId &&
+                                                          x.User.Id==userId)).ToList();
+            
+                return contacts;
+           
         }
 
         [HttpPut]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/user/{userId}/contact/{contactId}/update")]
         public async  Task<ActionResult> UpdateContact(Guid tenetId, Guid userId, Guid contactId,DtoContact dtoupdatecontact)
-        {
-            if (ModelState.IsValid)
-            {
-                Contact contact =await this._contactRepo.FirstOrDefault(x=>x.Id==contactId &&x.User.Id==userId);
+        {   if (await _tenentRepo.GetById(tenetId) == null)
+                return BadRequest("tenent not found");
+            if (await _userRepo.GetById(userId) == null)
+                return BadRequest("user not found");
+            if (await _contactRepo.GetById(contactId) == null)
+                return BadRequest("contact not found");
+
+            if (!ModelState.IsValid)
+                return BadRequest("Information provided is not valid");
+            
+                Contact contact = await this._contactRepo.FirstOrDefault(x => x.Id == contactId && x.User.Id == userId);
                 contact.Name = dtoupdatecontact.Name;
                 contact.Mobileno = dtoupdatecontact.MobileNo;
                 await this._contactRepo.update(contact);
                 return Ok("Updated Successfully");
-                
-            }
-            return BadRequest("Not Updated Contact");
+            
         }
 
 
@@ -104,7 +112,7 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpDelete]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/users/{userId}/contact/{contactId}/delete")]
-        public async Task<ActionResult<Contact>> DeleteContact(Guid tenetId, Guid userId, Guid contactId)
+        public async Task<ActionResult> DeleteContact(Guid tenetId, Guid userId, Guid contactId)
         {
             if(await this._contactRepo.FirstOrDefault(x=>x.Id==contactId && x.User.Id==userId) != null)
             {

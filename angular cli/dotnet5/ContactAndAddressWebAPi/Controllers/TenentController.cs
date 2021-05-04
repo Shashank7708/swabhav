@@ -29,10 +29,10 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpPost]
         [EnableCors("CorsPolicy")]
         [Route("register")]
-        [SampleJwtAuthorization(Role = new string[] { "superadmin" })]
-        public async Task<ActionResult<Tenent>> AddTenet(DtoTenet dtotenent)
+  //      [SampleJwtAuthorization(Role = new string[] { "superadmin" })]
+        public async Task<ActionResult> AddTenet(DtoTenet dtotenent)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && dtotenent.TenentStrength>0)
             {
                 Tenent tenet = new Tenent { Name = dtotenent.Name, TenentStrength = dtotenent.TenentStrength };
                 tenet.Id = new Guid();
@@ -46,43 +46,39 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpGet]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/get")]
-        [SampleJwtAuthorization]
+  //      [SampleJwtAuthorization]
         public async Task<ActionResult<Tenent>> GetTenetAsPerId(Guid tenentId)
         {
-            var tenet = await this._tenentRepo.GetById(tenentId);
-            if (tenet.Name != null)
+            if (tenentId.ToString() == null)
+                return BadRequest("Bad Request");
+            var tenent = await this._tenentRepo.GetById(tenentId);
+            if (tenent != null)
             {
-                return Ok(tenet);
+                return tenent;
             }
-            else
-            {
-                return NotFound("No Such Tenet is Register");
-            }
+
+           return NotFound("No Such Tenet is Register");
+            
         }
 
         [HttpGet]
         [EnableCors("CorsPolicy")]
         [Route("")]
-        [SampleJwtAuthorization(Role = new string[] { "superadmin" })]
-        public async Task<ActionResult<IEnumerable<Tenent>>> GetTenents()
+ //       [SampleJwtAuthorization(Role = new string[] { "superadmin" })]
+        public async Task<List<Tenent>> GetTenents()
         {
-            IEnumerable<Tenent> tenents = await this._tenentRepo.GetAll();
-            if (tenents.Count() > 0)
-            {
-                return Ok(tenents);
-            }
-            else
-            {
-                return NoContent();
-            }
+            List<Tenent> tenents = (await this._tenentRepo.GetAll()).ToList();
+            return tenents; 
         }
 
         [HttpDelete]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/delete")]
-        [SampleJwtAuthorization(Role = new string[] { "superadmin" })]
+   //     [SampleJwtAuthorization(Role = new string[] { "superadmin" })]
         public async Task<ActionResult> DeleteTenent(Guid tenentId)
         {
+            if (tenentId.ToString() == null)
+                return BadRequest("bad Request");
             if (await this._tenentRepo.GetById(tenentId) != null)
             {
                 Tenent tenent = await this._tenentRepo.GetById(tenentId);
@@ -96,7 +92,7 @@ namespace ContactAndAddressWebAPi.Controllers
         [HttpPut]
         [EnableCors("CorsPolicy")]
         [Route("{tenentId}/update")]
-        [SampleJwtAuthorization(Role =new string[] { "superadmin" })]
+    //    [SampleJwtAuthorization(Role =new string[] { "superadmin" })]
         public async  Task<ActionResult> UpdateTenent(Guid tenentId,DtoTenet dtotenent)
         {
             if (ModelState.IsValid  && (await this._tenentRepo.GetById(tenentId)!=null))
@@ -123,10 +119,9 @@ namespace ContactAndAddressWebAPi.Controllers
             {
                 return NotFound("No Such Tenet is Register");
             }
-            else
-            {
-                return Ok(tenent);
-            }
+          
+            return Ok(tenent);
+            
         }
 
 

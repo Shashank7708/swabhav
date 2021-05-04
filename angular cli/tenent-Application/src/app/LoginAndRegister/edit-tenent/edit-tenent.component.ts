@@ -29,7 +29,8 @@ this.edittenent=new FormGroup({
   onSubmit(){
     console.log("hello "+this.tenent.name+" streingth: "+this.tenent.tenentStrength);
     this.service.updateTenent(this.tenent.id,this.tenent).subscribe(
-      res=>{console.log(res);this.route.navigateByUrl('secure/getalltenent')},
+      res=>{console.log(res);
+        this.route.navigateByUrl('/secure/getalltenent')},
       err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){

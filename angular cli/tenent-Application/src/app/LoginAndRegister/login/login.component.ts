@@ -107,6 +107,7 @@ FindCompanyOfUser(companyName:string){
     },
     err=>{
       console.log(err);
+      this._toastr.error('invalid username or password');
       if(err instanceof HttpErrorResponse){
         if(err.status==401){
           this._toastr.error('invalid username or password');
