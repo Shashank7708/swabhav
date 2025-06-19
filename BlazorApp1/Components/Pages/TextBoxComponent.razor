@@ -1,0 +1,22 @@
+﻿@rendermode InteractiveServer
+
+<input placeholder="@PlaceHolder"/>
+<!--<input attributes="@Abttributes" />-->
+
+<button @onclick="@(()=> displayInfo=true)">Displayinfo Click Me</button>
+@if(displayInfo){
+	<p>This info will be only shown if displayinfo button is clicked</p>
+}
+
+@code{
+	[Parameter]
+	public string PlaceHolder{ get; set; }
+
+	// To give all input parameter we can use dictionary
+	//[Parameter(CaptureUnmatchedValues =true)]
+	//public Dictionary<string,object> Abttributes{ get; set; }
+
+	private bool displayInfo = false;
+}
+
+
