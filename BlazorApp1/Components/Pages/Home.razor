@@ -1,0 +1,68 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+@using BlazorApp1.Components.Pages;
+@using BlazorApp1.Data
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, @userName</h1>
+<h2>Hello World, @GetUserName()</h2>
+Welcome to your new app.
+<button @onclick="@(()=> { userName="Peter"; })">Change Name</button>
+
+@if (userName == "Romy"){
+	<p>Say Hi</p>
+}
+else{
+	<p>Say No</p>
+}
+@for(int i=0;i<5;i++){
+	<p>@i</p>
+}
+<br />
+<input type="checkbox" @bind="displayEmail"/><label>  Show Email</label>
+<br />
+@foreach (var c in contacts)
+{
+	<ContactComponent FirstName="@c.name" LastName="@c.lstName" Email="@c.email" DisplayEmail="@displayEmail"></ContactComponent>
+}
+
+<TextBoxComponent  PlaceHolder="My Place Holder" ></TextBoxComponent>
+
+@code{
+	private bool displayEmail = false;
+	private string userName = "Romy";
+
+	public List<Contact> contacts;
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		contacts = new List<Contact>(){
+			new Contact{name="Raj",lstName="Shekhar",email="rjsh@gmail.com" },
+			new Contact{name="Rd",lstName="Raman",email="rdrm@gmail.com"}
+		};
+
+	}
+
+
+	private string GetUserName(){
+		return new String("Badshah");
+	}
+
+	private void ChangeUserName()
+	{
+		userName = "Namrata";
+	}
+
+	/*
+		@rendermode InteractiveServer to be included if onclick and other event is to be fired
+		At global level include below in body route
+		<body>
+	<Routes @rendermode=RenderMode.InteractiveServer />
+	<script src="_framework/blazor.web.js"></script>
+	</body>
+	*/
+}
