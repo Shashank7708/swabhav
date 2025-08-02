@@ -10,6 +10,14 @@ namespace DIctionaryOperations
     {
         static void Main(string[] args)
         {
+            var ceil = Math.Ceiling(3.5);
+            var ceil2 = Math.Ceiling(3.4F);
+            var ceil3 = Math.Ceiling(3.7);
+
+            var floor1 = Math.Floor(3.5);
+            var floor2 = Math.Floor(3.4);
+            var floor3 = Math.Floor(3.7);
+
             Program p = new Program();
             p.DictionaryOperations();
             Console.ReadLine();
