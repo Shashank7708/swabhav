@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindHighestAltitude1732", "FindHighestAltitude1732.csproj", "{2DCDAF4C-C909-4667-8F27-4D25B7D903EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DCDAF4C-C909-4667-8F27-4D25B7D903EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCDAF4C-C909-4667-8F27-4D25B7D903EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCDAF4C-C909-4667-8F27-4D25B7D903EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCDAF4C-C909-4667-8F27-4D25B7D903EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DC745E5-8478-48E1-BEE6-709F0BE3F743}
+	EndGlobalSection
+EndGlobal
