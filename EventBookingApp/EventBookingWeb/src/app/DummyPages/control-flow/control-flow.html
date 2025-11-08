@@ -1,0 +1,68 @@
+<p>control-flow works!</p>
+
+<div class="row">
+    <div class="col-3">
+        <select [(ngModel)]="selectVal">
+            <option value="abc">Abc</option>
+            <option value="xyz">xyz</option>
+            <option value="others">others</option>
+        </select>
+    </div>
+
+    <div class="col-3">
+        @if(selectVal=="others"){
+            <input typ="text" placeholder="Other Value">
+        }
+    </div>
+
+    <div class="col-2">
+        @if(IsActive()==true){
+            <span class="text-primary">Student Is Active</span>
+        }
+        @else {
+            <span class="text-danger">Student is InActive</span>
+        }
+    </div>
+
+    <button class="btn btn-primary" (click)="changeStatus(true)"> Make Active</button>
+    <button class="btn btn-warning" (click)="changeStatus(false)">Make InActive</button>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            @for(i of cityList;track $index){
+            <li>{{$index+1}} {{i}}</li>
+            }
+           
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <table class="table table-bordered">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Categroy</th>
+            </thead>
+            <tbody>
+                
+                    @for(i of studentData;track $index){
+                       <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.Age}}</td>
+                        <td>{{i.Age>20? "Young":"Underage"}}</td>
+                        </tr>
+                    }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

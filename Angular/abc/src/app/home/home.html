@@ -1,0 +1,11 @@
+<p>home works!</p>
+<button [disabled]="clicked" (click)="HandleClick()">Click Me</button>
+{{abc}}
+
+<div *ngFor="let b of boat | async">
+    <div *ngIf="clicked">
+        <h3>Boat images {{b.name}}</h3>
+        <img [src]='b.img' width="200px">
+        <h4>Built in {{b.year | year}}</h4>
+    </div>
+</div>

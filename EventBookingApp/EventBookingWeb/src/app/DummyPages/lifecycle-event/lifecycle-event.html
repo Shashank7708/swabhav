@@ -1,0 +1,12 @@
+<p [class]="spanClassName">lifecycle-event works!</p>
+
+<!--Interpolation and property binding : if we change value in input box, rollno doesnt change it changes when we use ngmodel-->
+<input type="number" value="{{rollno}}" [maxLength]="mintestLength"> 
+<input type="text" [value]="rollno">
+<input type="text" [(ngModel)]="rollno">
+<br>
+<select (change)="OnCityChange()" id="city" [(ngModel)]="city">
+    <option value="Dublin">Dublin</option>
+    <option value="Donegal">Donegal</option>
+    <option value="Cork">Cork</option>
+</select>

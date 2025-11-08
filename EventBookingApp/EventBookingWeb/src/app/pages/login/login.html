@@ -1,0 +1,54 @@
+<app-lifecycle-event></app-lifecycle-event>
+<br>
+
+<app-signal></app-signal>
+
+<app-control-flow></app-control-flow>
+
+<div class="login-wrapper d-flex justify-content-center align-items-center">
+    <div class="login-card p-4 shadow">
+        <h3 class="text-center mb-4">Login</h3>
+
+        <form #loginForm="ngForm">
+            <div class="mb-3">
+                <label for="email"  class="form-label">Email address</label>
+                <input type="email" #emailId="ngModel" [(ngModel)]="loginObj.EmailId" name="emailId" class="form-control" id="email" placeholder="Enter your email" required />
+                <div class="text-danger small">
+                    @if(emailId.touched && emailId.errors?.['required']){
+                      <span>EmailId is required</span>
+                    }
+                </div>
+                <div class="text-danger small">
+                    @if(emailId.touched && emailId.errors?.['email']){
+                        <span> Enter Valid Email</span>
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" #password="ngModel" [(ngModel)]="loginObj.Password" name="password" class="form-control" id="password" placeholder="Enter your password" required />
+                <div class="text-danger small">
+                    @if(password.touched && password.errors?.['required']){
+                        <span>Password is required</span>
+                    }
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember" />
+                    <label class="form-check-label" for="remember">Remember me</label>
+                </div>
+                <a href="#" class="text-decoration-none">Forgot password?</a>
+            </div>
+
+            <button type="submit" [disabled]="loginForm.invalid" (click)="loginUser()" class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <p class="text-center mt-3 mb-0">
+            Don’t have an account?
+            <a routerLink="/signUp" class="text-decoration-none">Register</a>
+        </p>
+    </div>
+</div>

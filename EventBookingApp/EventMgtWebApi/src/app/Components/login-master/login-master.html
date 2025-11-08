@@ -1,0 +1,24 @@
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Password</th>
+      <th scope="col">IsActive</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let i of logins">
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.pwd}}</td>
+      <td>{{i.isActive}}</td>
+      <td><button clas="btn btn-primary" (click)="Editlogin(i.id)" value="Edit">Edit</button>
+    <button clas="btn btn-primary" (click)="Deletelogin(i.id)" value="Delete">Delete</button>
+    </td>
+    </tr>
+  </tbody>
+</table>

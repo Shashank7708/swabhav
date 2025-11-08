@@ -1,0 +1,23 @@
+<button class="btn btn-success" (click)="NavigatetoCreateUser()">Click me</button>
+<button class="btn btn-primary" routerLink="/LoginMaster">Click me</button>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">IsActive</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let i of users">
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.isActive}}</td>
+      <td><button clas="btn btn-primary" (click)="EditUser(i.id)" value="Edit">Edit</button>
+    <button clas="btn btn-primary" (click)="DeleteUser(i.id)" value="Delete">Delete</button>
+    </td>
+    </tr>
+  </tbody>
+</table>
