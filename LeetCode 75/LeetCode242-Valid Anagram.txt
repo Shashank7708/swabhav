@@ -1,0 +1,38 @@
+public class Solution {
+    public bool IsAnagram(string s, string t) {
+        //App2 BTW we can also use Dictionary
+        int[] arr=new int[26];
+        if(s.Length!=t.Length)
+            return false;
+        for(int i=0;i<s.Length;i++){
+            int sChar=s[i]-'a';
+            arr[sChar]++;
+            int tChar=t[i]-'a';
+            arr[tChar]--;
+        }
+        for(int i=0;i<arr.Length;i++){
+            if(arr[i]!=0)
+                return false;
+        }
+        return true;
+
+        //App1 BruteForce
+        char[] sArray=s.ToCharArray();
+        char[] tArray =t.ToCharArray();
+        if(s.Length!=t.Length)
+            return false;
+        for(int i=0;i<sArray.Length;i++){
+            for(int j=0;j<tArray.Length;j++){
+                if(sArray[i]==tArray[j] && sArray[i]!='\0'){
+                    sArray[i]=tArray[j]='\0';
+                }
+            }
+        }
+        for(int i=0;i<sArray.Length;i++){
+            if(sArray[i]!='\0' || tArray[i]!='\0')
+                return false;
+        }
+        return true;
+
+    }
+}

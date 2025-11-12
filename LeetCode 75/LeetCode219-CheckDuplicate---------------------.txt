@@ -1,0 +1,49 @@
+public class Solution {
+    public bool ContainsNearbyDuplicate(int[] nums, int k) {
+        //App1
+        HashSet<int> set=new HashSet<int>();
+        for(int i=0;i<=k && i<nums.Length;i++){
+            if(set.Contains(nums[i]))  {
+                return true;
+            }
+            set.Add(nums[i]);
+        }
+
+        for(int i=k+1; i<nums.Length;i++){
+            set.Remove(nums[i-k-1]);
+         if(set.Contains(nums[i]))  {
+                return true;
+            }
+            set.Add(nums[i]);
+        }
+        return false;
+        
+        //App2
+        int len=nums.Length;
+       // if(len<)
+//nums=new int[]{0,1,2,3,4,5,0};
+        for(int i=1;i<nums.Length;i++){
+            int target=nums[i-1];
+            //int=new int[k];
+            var lst=new List<int>();
+            int counter=0;
+            for(int j=i;j<k+i && j<len;j++)
+            {
+                lst.Add(nums[j]);
+            }
+            var temp=lst.ToArray();
+            Array.Sort(temp);
+            int min=0;int max=temp.Length-1;
+            while(min<=max){
+                int mid=(min+max)/2;
+                if(temp[mid]==target)
+                    return true;
+                else if(temp[mid]>target)
+                    max=mid-1;
+                else 
+                    min=mid+1;
+            }
+        }
+        return false;
+    }
+}

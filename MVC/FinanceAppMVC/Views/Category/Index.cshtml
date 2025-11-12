@@ -1,0 +1,70 @@
+﻿@model IEnumerable<FinanceAppMVC.Models.Category>
+
+<html>
+	<head>
+	<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/Category.js"></script>
+</head>
+</html>
+<h1 id="h1Html"></h1>
+<div class="container">
+	<h1>Category</h1>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Employee</button><br /><br />
+	<table class="table table-bordered">
+		<thead>
+		<tr>
+
+				<th>Name</th>
+				<th>MainCategory</th>
+				<th>DisplayOrder</th>
+				<th>CreatedOn</th>
+				<th>CreatedBy</th>
+				<th>Action</th>
+		</tr>
+		</thead>
+		<tbody id="tbodyCategory">
+
+</tbody>
+	</table>
+</div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				@*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">&times;</span></button>*@
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Add Employee</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<input type="number" class="form-control" id="Id"  hidden>
+					</div>
+					<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" id="name" placeholder="name" />
+					</div>
+					<div>
+						<label for="mainCategory">MainCategory</label>
+						<input type="text" class="form-control" id="mainCategory" placeholder="mainCategory"/>
+					</div>
+					<div>
+						<label for="displayOrder">DisplayOrder</label>
+						<input type="number" class="form-control" id="displayOrder" placeholder="displayOrder" />
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="btnAdd" onclick="Add();">Add</button>
+				<button type="button" class="btn btn-primary"  id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+				<button type="button" class="btn btn-default" onclick="clearInputs()" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
