@@ -1,0 +1,29 @@
+﻿@model IEnumerable<RestaurantAppMVC.Models.Ingredient>;
+@{
+	ViewBag.Title = "List of Restaurant Ingredient";
+}
+<h1>Ingredients</h1>
+<a asp-action="Create" >Create</a>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+		<th>IngredientName</th>
+		<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var i in Model)
+		{
+			<tr>
+				<td>@i.Name</td>
+				<td>
+					<button class="btn btn-primary" onclick="location.href='@Url.Action("GetIngredientDetials","Ingredient",new {id=i.IngredientId})'">Details</button>
+					<a asp-action="Edit" asp-controller="Ingredient" class="text-warning" asp-route-id="@i.IngredientId" >Edit</a>
+					<a asp-action="Delete" asp-controller="Ingredient" class="text-danger" asp-route-id="@i.IngredientId" >Delete</a>
+				</td>
+			
+			</tr>
+		}
+	</tbody>
+</table>
+
