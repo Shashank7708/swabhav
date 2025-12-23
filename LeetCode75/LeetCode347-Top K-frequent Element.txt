@@ -1,0 +1,22 @@
+public class Solution {
+    public int[] TopKFrequent(int[] nums, int k) {
+        Dictionary<int,int> dict=new Dictionary<int,int>();
+        PriorityQueue<int,int> queue=new PriorityQueue<int,int>();
+        foreach(var n in nums){
+            if(!dict.ContainsKey(n))
+                dict.Add(n,0);
+            dict[n]++;
+        }
+        foreach(var i in dict){
+            queue.Enqueue(i.Key,i.Value);
+            if(queue.Count>k){
+                queue.Dequeue();
+            }
+        }
+        int[] arr=new int[k];
+        for(int i=0;i<k;i++){
+            arr[i]=queue.Dequeue();
+        }
+        return arr;
+    }
+}

@@ -1,0 +1,2 @@
+C#, sql server, cosmos db(learn computing,storage,networking, identity(azure ad)),microservices, load balancing
+docker, kubernetes,logs(azure monitoring,application insights,prometheus)
