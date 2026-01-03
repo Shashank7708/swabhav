@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservice.Play.Catelog.Service", "Microservice.Play.Catelog.Service.csproj", "{AAC27F8B-C4C3-112D-DD7A-DDB5DDD8CC32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAC27F8B-C4C3-112D-DD7A-DDB5DDD8CC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC27F8B-C4C3-112D-DD7A-DDB5DDD8CC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC27F8B-C4C3-112D-DD7A-DDB5DDD8CC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC27F8B-C4C3-112D-DD7A-DDB5DDD8CC32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CE04E3E-86B0-4C3C-8302-8666EA7A8A1C}
+	EndGlobalSection
+EndGlobal

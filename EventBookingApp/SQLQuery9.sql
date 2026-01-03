@@ -106,7 +106,9 @@ join RestaurantBranches as br with(Nolock) on br.id=d.BranchId
 join TimeSlots as ts with(nolock) on ts.id=r.TimeSlotId
 
 
-
+Shashank Shetye
+shetyeshashankir@gmail.com | 
+ (+353) 892621591
 
 select u.FirstName,dt.SeatName,t.ReservationDay,r.reservationstatus, br.Name,rt.Name from Reservations as r with(Nolock)
 join users as u with(nolock) on u.id=r.UserId

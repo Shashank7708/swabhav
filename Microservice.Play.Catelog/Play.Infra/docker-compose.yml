@@ -1,0 +1,29 @@
+# docker run -t --rm --name mongo -p 27016:27017 mongodbdata:/data/db mongo
+# since port can be many so we use array "-" in mongodo
+
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27016:27017
+    volumes: 
+      - mongodbdata:/data/db
+  
+  rabbitMq:
+    image: rabbitmq:management
+    container_name: rabbitMq
+    ports:
+      - 5672:5672  #For service to publish message to rabbitMq
+      - 15672:15672  #to navigate to rabbitMq Portal
+    volumes:
+      - rabbitMqdata:/var/lib/rabbitMq
+    hostname: rabbitMq1  # Imp as when we start rabbitmq everytime, to avoid new instance created
+
+volumes:
+  mongodbdata:
+  rabbitMqdata:
+
+

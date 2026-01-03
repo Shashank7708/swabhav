@@ -1,0 +1,6 @@
+@Microservice.Play.Catelog.Service_HostAddress = http://localhost:5205
+
+GET {{Microservice.Play.Catelog.Service_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
