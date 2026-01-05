@@ -100,12 +100,10 @@ namespace Microservice.Play.Catelog.Service.Controllers
                 };
              await _itemRepository.UpdateAsync(updatedItem.ItemDtoToItem());
 
-            await _publishEndpoint.Publish(new CatalogItemUpdated(updatedItem.Id,updatedItem.Name,updatedItem.Description));  
-               // var index=items.FindIndex(x => x.Id == updatedItem.Id);
-               // items[index]=updatedItem;
-             return CreatedAtAction($"GetById",new {id=updatedItem.Id}, updatedItem with { Id=Guid.Empty});
-            
-            
+            await _publishEndpoint.Publish(new CatalogItemUpdated(updatedItem.Id,updatedItem.Name,updatedItem.Description));
+            // var index=items.FindIndex(x => x.Id == updatedItem.Id);
+            // items[index]=updatedItem;
+            return CreatedAtAction($"GetById", new { id = updatedItem.Id }, updatedItem with { Id = Guid.Empty });
         }
 
         [HttpDelete]
