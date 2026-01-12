@@ -1,0 +1,27 @@
+﻿@model RestaurantAppMVC.Models.Ingredient
+@{
+	ViewBag.Title = "Create Ingredient";
+}
+<html>
+	<head>
+		<script src="~/JavaScript/Ingredient.js"></script>
+	</head>
+	<body>
+<div class="row">
+<div class="col-md-4">
+	<h1>Create Ingredient</h1>
+	<form asp-action="Create" method="post">
+		<div class="form-group">
+			<input type="hidden"  asp-for="IngredientId" />
+			<label asp-for="Name">Name</label>
+					<input type="text" id="name" class="form-control" asp-for="Name" />
+			<span asp-validation-for="Name"  class="text-danger small"></span>
+		</div>
+		<button type="submit" class="btn btn-primary">Create</button>
+				<button type="button" class="btn btn-warning" onclick="ClearInputs()">Clear Inputs</button>
+				<button class="btn btn-secondary" asp-action="Index" >Back to List</button>
+	</form>
+</div>
+</div>
+</body>
+</html>

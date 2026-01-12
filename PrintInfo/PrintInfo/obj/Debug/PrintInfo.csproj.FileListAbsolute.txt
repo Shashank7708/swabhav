@@ -1,0 +1,7 @@
+C:\swabhav\PrintInfo\PrintInfo\bin\Debug\PrintInfo.exe.config
+C:\swabhav\PrintInfo\PrintInfo\bin\Debug\PrintInfo.exe
+C:\swabhav\PrintInfo\PrintInfo\bin\Debug\PrintInfo.pdb
+C:\swabhav\PrintInfo\PrintInfo\obj\Debug\PrintInfo.csprojAssemblyReference.cache
+C:\swabhav\PrintInfo\PrintInfo\obj\Debug\PrintInfo.csproj.CoreCompileInputs.cache
+C:\swabhav\PrintInfo\PrintInfo\obj\Debug\PrintInfo.exe
+C:\swabhav\PrintInfo\PrintInfo\obj\Debug\PrintInfo.pdb

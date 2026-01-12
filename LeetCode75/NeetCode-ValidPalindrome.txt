@@ -1,0 +1,19 @@
+public class Solution {
+    public bool IsPalindrome(string s) {
+        StringBuilder sb=new StringBuilder();
+        List<char> lst=new List<char>();
+        int counter=0;
+       foreach(var c in s) {
+        if((c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9')){
+            sb.Append(c);
+        }
+       }
+       string str=sb.ToString().ToLower();
+        counter=str.Length-1;
+       for(int i=0;i<str.Length/2;i++,counter--){
+        if(str[i]!=str[counter])
+            return false;
+       }
+        return true;
+    }
+}

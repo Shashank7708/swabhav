@@ -1,0 +1,7 @@
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\bin\Debug\EmployeAnalystProgrammer.exe.config
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\bin\Debug\EmployeAnalystProgrammer.exe
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\bin\Debug\EmployeAnalystProgrammer.pdb
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\obj\Debug\EmployeAnalystProgrammer.csprojAssemblyReference.cache
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\obj\Debug\EmployeAnalystProgrammer.csproj.CoreCompileInputs.cache
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\obj\Debug\EmployeAnalystProgrammer.exe
+C:\swabhav\EmployeAnalystProgrammer\EmployeAnalystProgrammer\obj\Debug\EmployeAnalystProgrammer.pdb

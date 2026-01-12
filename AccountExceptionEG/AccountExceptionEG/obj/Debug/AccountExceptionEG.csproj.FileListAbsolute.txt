@@ -1,0 +1,7 @@
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\bin\Debug\AccountExceptionEG.exe.config
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\bin\Debug\AccountExceptionEG.exe
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\bin\Debug\AccountExceptionEG.pdb
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\obj\Debug\AccountExceptionEG.csprojAssemblyReference.cache
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\obj\Debug\AccountExceptionEG.csproj.CoreCompileInputs.cache
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\obj\Debug\AccountExceptionEG.exe
+C:\swabhav\AccountExceptionEG\AccountExceptionEG\obj\Debug\AccountExceptionEG.pdb

@@ -1,0 +1,7 @@
+C:\swabhav\Substringeg\Substringeg\bin\Debug\Substringeg.exe.config
+C:\swabhav\Substringeg\Substringeg\bin\Debug\Substringeg.exe
+C:\swabhav\Substringeg\Substringeg\bin\Debug\Substringeg.pdb
+C:\swabhav\Substringeg\Substringeg\obj\Debug\Substringeg.csprojAssemblyReference.cache
+C:\swabhav\Substringeg\Substringeg\obj\Debug\Substringeg.csproj.CoreCompileInputs.cache
+C:\swabhav\Substringeg\Substringeg\obj\Debug\Substringeg.exe
+C:\swabhav\Substringeg\Substringeg\obj\Debug\Substringeg.pdb

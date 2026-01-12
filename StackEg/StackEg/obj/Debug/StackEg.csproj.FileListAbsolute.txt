@@ -1,0 +1,7 @@
+C:\swabhav\StackEg\StackEg\bin\Debug\StackEg.exe.config
+C:\swabhav\StackEg\StackEg\bin\Debug\StackEg.exe
+C:\swabhav\StackEg\StackEg\bin\Debug\StackEg.pdb
+C:\swabhav\StackEg\StackEg\obj\Debug\StackEg.csprojAssemblyReference.cache
+C:\swabhav\StackEg\StackEg\obj\Debug\StackEg.csproj.CoreCompileInputs.cache
+C:\swabhav\StackEg\StackEg\obj\Debug\StackEg.exe
+C:\swabhav\StackEg\StackEg\obj\Debug\StackEg.pdb

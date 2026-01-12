@@ -1,0 +1,7 @@
+C:\swabhav\GenericProductCollection\GenericProductCollection\bin\Debug\GenericProductCollection.exe.config
+C:\swabhav\GenericProductCollection\GenericProductCollection\bin\Debug\GenericProductCollection.exe
+C:\swabhav\GenericProductCollection\GenericProductCollection\bin\Debug\GenericProductCollection.pdb
+C:\swabhav\GenericProductCollection\GenericProductCollection\obj\Debug\GenericProductCollection.csprojAssemblyReference.cache
+C:\swabhav\GenericProductCollection\GenericProductCollection\obj\Debug\GenericProductCollection.csproj.CoreCompileInputs.cache
+C:\swabhav\GenericProductCollection\GenericProductCollection\obj\Debug\GenericProductCollection.exe
+C:\swabhav\GenericProductCollection\GenericProductCollection\obj\Debug\GenericProductCollection.pdb

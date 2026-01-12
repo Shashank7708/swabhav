@@ -1,0 +1,7 @@
+C:\swabhav\QueueEg\QueueEg\bin\Debug\QueueEg.exe.config
+C:\swabhav\QueueEg\QueueEg\bin\Debug\QueueEg.exe
+C:\swabhav\QueueEg\QueueEg\bin\Debug\QueueEg.pdb
+C:\swabhav\QueueEg\QueueEg\obj\Debug\QueueEg.csprojAssemblyReference.cache
+C:\swabhav\QueueEg\QueueEg\obj\Debug\QueueEg.csproj.CoreCompileInputs.cache
+C:\swabhav\QueueEg\QueueEg\obj\Debug\QueueEg.exe
+C:\swabhav\QueueEg\QueueEg\obj\Debug\QueueEg.pdb

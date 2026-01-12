@@ -1,0 +1,97 @@
+<!--
+<div *ngIf="shownavbar">
+    <div class="navbar navbar-inverse bg-primary navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                {{tenent.name}}
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-right nav navbar-nav">
+                    <li (click)="logout()">Logout</li>
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+   <p>Tenent-Name:{{tenent.name}}</p>
+   <p>Tenent-Strength:{{count}}</p>
+</div>
+-->
+
+
+<br>
+<div class="container1">
+    <div class="box">
+        <h2>Name:</h2>
+        <h3>{{tenent.name | uppercase}}</h3>  
+    </div>
+    <div class="box">
+    <h2>Strength:</h2>
+        <h3>{{count}}</h3>
+    </div>
+    <div class="box box1" (click)="addClick()">
+        <h2  >AddUser</h2>
+        </div>
+     <div class="box box2" (click)="showfavourite()">
+        <h2  >Favourite</h2>
+        </div>
+</div>
+
+
+
+<br>
+<div *ngIf="dummydata">
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam earum ipsum, maiores temporibus cumque alias explicabo quidem magni quia, ipsam, consequatur nostrum expedita omnis nobis laudantium eveniet nulla quis molestiae?</p>
+<button>Click Here</button>
+</div>
+
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-12">
+            
+         
+<table class="table">
+<thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>UserName</th>
+        <th>Role</th>
+        <th>Favourite</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Contacts</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let user of users">
+    <td scope="row">{{user.id}}</td>
+    <td scope="row">{{user. userName}}</td>
+    
+    <td scope="row">{{user.role}}</td>
+    <td>
+        <button type="button" class="btn btn btn-success" (click)="Addfavourite(user.id)" >Favourite</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn btn-info" (click)="editClick(user)" >Edit</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger" (click)="deleteClick(user.id)"   >Delete</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-warning" (click)="getContacts(user)">Contacts</button>
+    </td>
+    </tr>
+    
+</table>
+</div>
+</div>
+</div>

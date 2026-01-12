@@ -1,0 +1,7 @@
+C:\swabhav\InterFaceEg1\InterFaceEg1\obj\Debug\InterFaceEg1.csprojAssemblyReference.cache
+C:\swabhav\InterFaceEg1\InterFaceEg1\obj\Debug\InterFaceEg1.csproj.CoreCompileInputs.cache
+C:\swabhav\InterFaceEg1\InterFaceEg1\bin\Debug\InterFaceEg1.exe.config
+C:\swabhav\InterFaceEg1\InterFaceEg1\bin\Debug\InterFaceEg1.exe
+C:\swabhav\InterFaceEg1\InterFaceEg1\bin\Debug\InterFaceEg1.pdb
+C:\swabhav\InterFaceEg1\InterFaceEg1\obj\Debug\InterFaceEg1.exe
+C:\swabhav\InterFaceEg1\InterFaceEg1\obj\Debug\InterFaceEg1.pdb

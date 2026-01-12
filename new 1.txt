@@ -1,0 +1,56 @@
+Homework:-
+abstract vs interface 
+1.
+2.
+3.
+
+sample exxample on interface 
+
+
+file handling 
+:-
+
+1. create student .txt :- student id,name,cgpa
+
+2. write some info into demo.txt 
+
+3. student.csv:student id,name,cgpa
+
+
+
+
+
+
+
+
+
+revision:-
+inheritance:- single ,hierarchical ,multilevel
+access modifiers:- public ,private ,protected,internal ,protected internal
+constructor behabiour in inheritance 
+polymorphism
+virtual and override keyword
+tostring ,equals and gethashcode
+
+r1  --10,23,red
+r2---10,23,red
+
+cw(r1.equals(r2));
+
+
+
+today we need to cover this:
+
+upcasting and downcasting 
+what
+why 
+how??
+
+
+Parent parentRef=new Child();
+parentRef.parent/child? ----------upcasting 
+
+
+
+Child childref=(Child)new Parent()
+childref.??

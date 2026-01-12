@@ -1,0 +1,47 @@
+<br>
+<br>
+<div class="container">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Product-list
+        </div>
+    </div>
+    <div class="panel body">
+        Filter by:<input type="text" placeholder="Search" [(ngModel)]="searchValue"  />
+        <br>
+        <br>
+        <button type="submit" (click)="showimage()">ShowImage</button>
+    
+        <br>
+        <br>
+        <table class="table">
+        
+            <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>5 Star Rating</th>
+            <th>Details</th>
+        </tr>
+    
+        <tr *ngFor="let product of products | searchfilter:searchValue">
+            
+            <td *ngIf="!disabled"></td>
+            <td *ngIf="disabled"><img src="{{product.imageUrl}}" width="50px" height="50px"></td>
+            <td>{{product.productName}}</td>
+            <td>{{product.productCode}}</td>
+            <td>{{product.releaseDate}}</td>
+            <td>{{product.price}}</td>
+            <td><rating [rating]= "product.starRating" (ratingEvent)="ratingHandler($event)"></rating></td>
+            <td>
+               <button class="btn btn-primary" (click)="showproductdetails(product)">Details</button>
+            </td>
+            <hr>
+        </tr>
+        </table>
+    </div>
+</div>
+</div>

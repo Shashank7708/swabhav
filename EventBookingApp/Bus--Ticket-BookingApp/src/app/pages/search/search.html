@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title mb-4 text-center">Search Bus Tickets</h3>
+            <form (ngSubmit)="searchBus()" #searchForm="ngForm">
+                <div class="row g-3">
+                    <!-- From -->
+                    <div class="col-md-6">
+                        <label for="from" class="form-label">From</label>
+                        <select name="fromLocation" [(ngModel)]="searchObj.fromLocation">
+                            <option selected disabled>Select From Location</option>
+                            <option value="1">Nagpur</option>
+                            <option value="2">Mumbai</option>
+                            @for(i of this.locations;track $index){
+                            <option [value]="i.locationId">{{i.locationName}}</option>
+                            }
+                        </select>
+                    </div>
+
+                    <!-- To -->
+                    <div class="col-md-6">
+                        <label for="to" class="form-label">To</label>
+                        <select name="toLocation" [(ngModel)]="searchObj.toLocation">
+                            <option selected disabled>Select To Location</option>
+                            <option value="1">Nagpur</option>
+                            <option value="2">Mumbai</option>
+                            @for(i of locations; track $index){
+                            <option [value]="i.locationId">{{i.locationName}}</option>
+                            }
+                        </select>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="col-md-6">
+                        <label for="date" class="form-label">Date of Journey</label>
+                        <input type="date" class="form-control" id="date" name="travelDate"
+                            [(ngModel)]="searchObj.travelDate" required>
+                    </div>
+
+                    <!-- Passengers -->
+                    <div class="col-md-6">
+                        <label for="passengers" class="form-label">Passengers</label>
+                        <select class="form-select" id="passengers" name="passengers">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid mt-4">
+                    <button type="submit" [disabled]="searchForm.invalid" class="btn btn-primary btn-lg">Search
+                        Buses</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<h1>Available Buses</h1>
+<table class="table table-bordered">
+    @for(item of busList;track $index){
+    <tr>
+        <td>{{item.busName}}</td>
+        <td>{{item.departureTime}}</td>
+        <td>{{item.Duration}}</td>
+        <td>{{item.arrivalTime}}</td>
+        <td>{{item.rating}}</td>
+        <td>{{item.price}}</td>
+        <td><a [routerLink]="['/booking']" [queryParams]="{busname:item.busName}">Book</a></td>
+    </tr>
+    }
+</table>

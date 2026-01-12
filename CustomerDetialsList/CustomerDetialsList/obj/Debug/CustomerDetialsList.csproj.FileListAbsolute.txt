@@ -1,0 +1,7 @@
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\bin\Debug\CustomerDetialsList.exe.config
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\bin\Debug\CustomerDetialsList.exe
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\bin\Debug\CustomerDetialsList.pdb
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\obj\Debug\CustomerDetialsList.csprojAssemblyReference.cache
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\obj\Debug\CustomerDetialsList.csproj.CoreCompileInputs.cache
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\obj\Debug\CustomerDetialsList.exe
+C:\swabhav\CustomerDetialsList\CustomerDetialsList\obj\Debug\CustomerDetialsList.pdb

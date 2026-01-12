@@ -1,0 +1,7 @@
+C:\swabhav\Unitztesting\Unitztesting\bin\Debug\Unitztesting.exe.config
+C:\swabhav\Unitztesting\Unitztesting\bin\Debug\Unitztesting.exe
+C:\swabhav\Unitztesting\Unitztesting\bin\Debug\Unitztesting.pdb
+C:\swabhav\Unitztesting\Unitztesting\obj\Debug\Unitztesting.csprojAssemblyReference.cache
+C:\swabhav\Unitztesting\Unitztesting\obj\Debug\Unitztesting.csproj.CoreCompileInputs.cache
+C:\swabhav\Unitztesting\Unitztesting\obj\Debug\Unitztesting.exe
+C:\swabhav\Unitztesting\Unitztesting\obj\Debug\Unitztesting.pdb

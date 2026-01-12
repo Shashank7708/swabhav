@@ -1,0 +1,7 @@
+C:\swabhav\Spliteg\Spliteg\bin\Debug\Spliteg.exe.config
+C:\swabhav\Spliteg\Spliteg\bin\Debug\Spliteg.exe
+C:\swabhav\Spliteg\Spliteg\bin\Debug\Spliteg.pdb
+C:\swabhav\Spliteg\Spliteg\obj\Debug\Spliteg.csprojAssemblyReference.cache
+C:\swabhav\Spliteg\Spliteg\obj\Debug\Spliteg.csproj.CoreCompileInputs.cache
+C:\swabhav\Spliteg\Spliteg\obj\Debug\Spliteg.exe
+C:\swabhav\Spliteg\Spliteg\obj\Debug\Spliteg.pdb

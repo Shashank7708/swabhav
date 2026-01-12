@@ -1,0 +1,7 @@
+C:\swabhav\RefOutParam\RefOutParam\bin\Debug\RefOutParam.exe.config
+C:\swabhav\RefOutParam\RefOutParam\bin\Debug\RefOutParam.exe
+C:\swabhav\RefOutParam\RefOutParam\bin\Debug\RefOutParam.pdb
+C:\swabhav\RefOutParam\RefOutParam\obj\Debug\RefOutParam.csprojAssemblyReference.cache
+C:\swabhav\RefOutParam\RefOutParam\obj\Debug\RefOutParam.csproj.CoreCompileInputs.cache
+C:\swabhav\RefOutParam\RefOutParam\obj\Debug\RefOutParam.exe
+C:\swabhav\RefOutParam\RefOutParam\obj\Debug\RefOutParam.pdb

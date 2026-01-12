@@ -1,0 +1,52 @@
+ static int LowerBound(int[] arr, int target)
+    {
+        int left = 0, right = arr.Length - 1, result = -1;
+
+        while (left <= right)
+        {
+            int mid = (left + right) / 2;
+
+            if (arr[mid] == target)
+            {
+                result = mid;
+                right = mid - 1; // keep searching left
+            }
+            else if (arr[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+
+        return result;
+    }
+
+    // Find upper bound (last occurrence)
+    static int UpperBound(int[] arr, int target)
+    {
+        int left = 0, right = arr.Length - 1, result = -1;
+
+        while (left <= right)
+        {
+            int mid = (left + right) / 2;
+
+            if (arr[mid] == target)
+            {
+                result = mid;
+                left = mid + 1; // keep searching right
+            }
+            else if (arr[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+
+        return result;
+    }

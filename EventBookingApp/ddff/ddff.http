@@ -1,0 +1,6 @@
+@ddff_HostAddress = http://localhost:5110
+
+GET {{ddff_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

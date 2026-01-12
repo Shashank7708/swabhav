@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header">
+                Photos List
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>title</th>
+                            <th>url</th>
+                            <th>thumbnailUrl</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(i of photosList;track $index){
+                        <tr>
+                            <td>{{i.albumId}}</td>
+                            <td>{{i.title}}</td>
+                            <td>{{i.url}}</td>
+                            <td>{{i.thumbnailUrl}}</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header">
+                Photos List
+            </div>
+            <div class="card-body">
+                <form #photoForm="ngForm">
+                    <div class="col-6">
+                        <label>Album Id</label>
+                        <input type="text" placeholder="albumId" [(ngModel)]="newPhoto.albumId" name="albumId" class="form-contorl">
+                    </div>
+                    <div class="col-6">
+                        <label>Title</label>
+                        <input type="text" placeholder="title" #title="ngModel" [(ngModel)]="newPhoto.title" name="title" class="form-contorl" required>
+                        <div>
+                            @if(title.touched && title.errors?.['required']){
+                                <span class="text-danger small"> Title is required</span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="col-6">
+                        <label>Url</label>
+                        <input type="text" placeholder="title" #url="ngModel" [(ngModel)]="newPhoto.url" name="url" class="form-contorl" required>
+                        <div>
+                            @if(url.touched && url.errors?.['required']){
+                                <span class="text-danger small">URL is required</span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="col-6">
+                        <label>ThumbnailUrl</label>
+                        <input type="text" placeholder="title" #thumbnailUrl="ngModel" [(ngModel)]="newPhoto.thumbnailUrl" name="thumbnailUrl" class="form-contorl" required>
+                        <div>
+                            @if(thumbnailUrl.touched && thumbnailUrl.errors?.['required']){
+                                <span class="text-danger small">Thumbnail is required</span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-warning text-center" (click)="resetForm()">Reset</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-success text-center" [disabled]="photoForm.invalid" (click)="submit()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+
+<!--id is used for dom and name is used for data binding and submission in form-->
+<form #myform="ngForm">
+    {{myform.value | json }}
+    <div class="form-control">
+        <label for="name"> Name</label>
+        <input type="text" id="name" name="name2" placeholder="Enter Name" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="emailid">Emailid</label>
+        <input type="email" id="emailid" name="emailid1" placeholder="example@gmail.com" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" name="pwd1"  ngModel>
+    </div>
+    <div class="form-group">
+        <input type="radio" id="radiobt" name="radiobt1"  ngModel> Male <br>
+        <input type="radio" id="radiobt" name="radiobt1" ngModel>Female
+    </div>
+    <div class="form-group">
+        <input type="checkbox" id="checkbx" name="checkbx" ngModel>CheckedId
+    </div>
+    <button type="submit" >Submit</button>
+</form>
+
+<!--
+
+<br>
+<br>
+<form>
+    <div class="form-group">
+        <label class="form-label" for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="emailid">Email</label>
+        <input type="email" class="form-control" name="emailid" placeholder="Enter EmailId">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="mobileno">Mobileno</label>
+        <input type="tel" class="form-control" id="mobileno" placeholder="Enter MobileNo">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter P">
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name="gender">
+        <label class="form-check-label"></label>
+    </div>
+   
+</form>
+-->
+
+
+{{dummycls | json}}
+<br>
+<br>
+<div class="container-fluid">
+<h1>BootEnrollment Form</h1>
+
+<form #myfrm="ngForm">
+    {{myfrm.value | json}}
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Enter your Name" name="name" [ngModel]="dummycls.name">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="Enter your Name" name="email" [ngModel]="dummycls.email">
+    </div>
+    <div class="form-group">
+        <label>Tel</label>
+        <input type="tel" class="form-control" placeholder="Enter your Name" name="phoneno" [ngModel]="dummycls.phoneno">
+    </div>
+    <div class="form-group">
+        <select class="custom-select" name="topic" [ngModel]="dummycls.topic">
+            <option selected value="">I am interested</option>
+            <option *ngFor="let g of topics" [value]="g" >{{g}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Time Preference</label>
+        <div class="form-check">
+            <input class="form-check-input" name="preferenceTime" type="radio"  value="Morning" [ngModel]="dummycls.preferenceTime">
+            <label class="form-check-label">Morning 9-5PM</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="preferenceTime" type="radio"  value="Evening" [ngModel]="dummycls.preferenceTime">
+            <label class="form-check-label">Evening 5-12AM</label>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="Submit">Submit</button>
+</form>
+</div>
+
+

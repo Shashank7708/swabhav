@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="jumbotron">
+                <h2 class="text-primary">Add-Tenent</h2>
+                <form [formGroup]="edittenent" (ngSubmit)="onSubmit()">
+                
+                    <div class="form-group">
+                        <label class="font-weight-bold">Name</label>
+                        <input type="text"
+                         [(ngModel)]="tenent.name"
+                         class="form-control"
+                         formControlName="Name">
+                            <div class="text-danger" *ngIf="edittenent.controls['Name'].hasError('required') 
+                                    && edittenent.controls['Name'].touched" >
+                                    Name Field Cannot be Empty 
+                            </div>
+                            <div class="text-danger" *ngIf="edittenent.controls['Name'].hasError('email') 
+                            && edittenent.controls['Name'].touched">
+                          Please Enter a Valid Email
+                  </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label class="font-weight-bold">CompanyStrength</label>
+                        <input type="number"
+                         [(ngModel)]="tenent.tenentStrength"
+                         class="form-control"
+                         formControlName="Strength">
+                            <div class="text-danger" *ngIf="edittenent.controls['Strength'].hasError('required') 
+                                    && edittenent.controls['Strength'].touched" >
+                                    Strength Field Cannot be Empty 
+                            </div>
+                    </div>
+                    
+                   
+                    <button class="btn btn-dark" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WelcomeConsoleCoreVs": {
+      "commandName": "Project",
+      "commandLineArgs": "12"
+    }
+  }
+}

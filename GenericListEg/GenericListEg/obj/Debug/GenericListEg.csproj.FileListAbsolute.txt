@@ -1,0 +1,7 @@
+C:\swabhav\GenericListEg\GenericListEg\bin\Debug\GenericListEg.exe.config
+C:\swabhav\GenericListEg\GenericListEg\bin\Debug\GenericListEg.exe
+C:\swabhav\GenericListEg\GenericListEg\bin\Debug\GenericListEg.pdb
+C:\swabhav\GenericListEg\GenericListEg\obj\Debug\GenericListEg.csprojAssemblyReference.cache
+C:\swabhav\GenericListEg\GenericListEg\obj\Debug\GenericListEg.csproj.CoreCompileInputs.cache
+C:\swabhav\GenericListEg\GenericListEg\obj\Debug\GenericListEg.exe
+C:\swabhav\GenericListEg\GenericListEg\obj\Debug\GenericListEg.pdb

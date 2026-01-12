@@ -1,0 +1,47 @@
+public class Solution {
+    public bool IsValidSudoku(char[][] board) {
+        return CheckHorizontal(board) && CheckVertically(board) && CheckBoxes(board);
+    }
+    public bool CheckHorizontal(char[][] board){
+        for(int i=0;i<board.Length;i++){
+            HashSet<int> set=new HashSet<int>();
+            for(int j=0;j<board[i].Length;j++){
+                if(set.Contains(board[i][j]) && board[i][j]!='.')
+                    return false;
+                set.Add(board[i][j]);
+            }
+        }
+        return true;
+    }
+    public bool CheckVertically(char[][] board){
+        for(int i=0;i<board.Length;i++){
+            HashSet<int> set=new HashSet<int>();
+            for(int j=0;j<board[i].Length;j++){
+                if(set.Contains(board[j][i]) && board[j][i]!='.')
+                    return false;
+                set.Add(board[j][i]);
+            }
+        }
+        return true;
+    }
+    public bool CheckBoxes(char[][] board){
+        for(int i=0;i<9;i=i+3){
+          for(int j=0;j<9;j=j+3){
+            if(!CheckEachBox(board, i,j))
+                return false;
+          }  
+        }
+        return true;
+    }
+    public bool CheckEachBox(char[][] board, int XStart,int YStart){
+        HashSet<int> set =new HashSet<int>();
+        for(int i=XStart;i<XStart+3;i++){
+          for(int j=YStart;j<YStart+3;j++){
+            if(set.Contains(board[i][j]) && board[i][j]!='.')
+                return false;
+            set.Add(board[i][j]);
+          }  
+        }
+        return true;
+    }
+}

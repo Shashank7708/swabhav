@@ -1,0 +1,7 @@
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\bin\Debug\VishalBankingAPP.exe.config
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\bin\Debug\VishalBankingAPP.exe
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\bin\Debug\VishalBankingAPP.pdb
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\obj\Debug\VishalBankingAPP.csprojAssemblyReference.cache
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\obj\Debug\VishalBankingAPP.csproj.CoreCompileInputs.cache
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\obj\Debug\VishalBankingAPP.exe
+C:\swabhav\VishalBankingAPP\VishalBankingAPP\obj\Debug\VishalBankingAPP.pdb

@@ -1,0 +1,7 @@
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\obj\Debug\ExceptionWithMethod.csprojAssemblyReference.cache
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\obj\Debug\ExceptionWithMethod.csproj.CoreCompileInputs.cache
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\bin\Debug\ExceptionWithMethod.exe.config
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\bin\Debug\ExceptionWithMethod.exe
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\bin\Debug\ExceptionWithMethod.pdb
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\obj\Debug\ExceptionWithMethod.exe
+C:\swabhav\ExceptionWithMethod\ExceptionWithMethod\obj\Debug\ExceptionWithMethod.pdb

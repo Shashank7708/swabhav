@@ -1,0 +1,63 @@
+<div class="auth-wrapper d-flex justify-content-center align-items-center">
+    <div class="auth-card p-4 shadow">
+        <h3 class="text-center mb-4">Sign Up</h3>
+
+        <form #signUpform="ngForm">
+            <div class="mb-3">
+                <label for="fullName"  class="form-label">Full Name</label>
+                <input type="text" #fullName="ngModel" [(ngModel)]="userRegisterObj.FullName" name="fullName" class="form-control"
+                    id="fullName" placeholder="Enter your full name" [required]="IsRequired" />
+                <div class="text-danger small">
+                    @if(fullName.touched && fullName.errors?.['required']){
+                        <span>full name is required</span>
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" #emailId="ngModel" [(ngModel)]="userRegisterObj.EmailId" name="emailId" class="form-control" id="email"
+                    placeholder="Enter your email" [required]="IsRequired" />
+                <div class="text-danger small">
+                    @if(emailId.touched && emailId.errors?.['required']){
+                        <span>EmailId is required</span>
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" #password="ngModel" [(ngModel)]="userRegisterObj.Password" name="password" class="form-control"
+                    id="password" placeholder="Enter your password" [required]="IsRequired" />
+                <div class="text-danger small">
+                    @if( password.touched && password.errors?.['required']){
+                        <span>Password is required</span>
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password"  #confirmPassword="ngModel" [(ngModel)]="userRegisterObj.ConfirmPassword" name="confirmPassword"  class="form-control" id="confirmPassword" placeholder="Confirm your password"
+                    [required]="IsRequired" />
+                <div class="text-danger small">
+                    @if(confirmPassword.errors?.['required']){
+                        <span>This field is required</span>
+                    }
+                </div>
+                <div class="text-danger small">
+                    @if(confirmPassword.touched && confirmPassword.value && confirmPassword.value!=password.value){
+                        <span>The password doesn't match</span>
+                    }
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="signUpform.invalid" (click)="registerUser()" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+
+        <p class="text-center mt-3 mb-0">
+            Already have an account?
+            <a routerLink="/login" class="text-decoration-none">Login</a>
+        </p>
+    </div>
+</div>

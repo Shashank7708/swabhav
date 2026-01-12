@@ -1,0 +1,7 @@
+C:\swabhav\DictionaryEg\DictionaryEg\bin\Debug\DictionaryEg.exe.config
+C:\swabhav\DictionaryEg\DictionaryEg\bin\Debug\DictionaryEg.exe
+C:\swabhav\DictionaryEg\DictionaryEg\bin\Debug\DictionaryEg.pdb
+C:\swabhav\DictionaryEg\DictionaryEg\obj\Debug\DictionaryEg.csprojAssemblyReference.cache
+C:\swabhav\DictionaryEg\DictionaryEg\obj\Debug\DictionaryEg.csproj.CoreCompileInputs.cache
+C:\swabhav\DictionaryEg\DictionaryEg\obj\Debug\DictionaryEg.exe
+C:\swabhav\DictionaryEg\DictionaryEg\obj\Debug\DictionaryEg.pdb

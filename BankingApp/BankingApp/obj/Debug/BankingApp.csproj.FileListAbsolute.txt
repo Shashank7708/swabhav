@@ -1,0 +1,7 @@
+C:\swabhav\BankingApp\BankingApp\bin\Debug\BankingApp.exe.config
+C:\swabhav\BankingApp\BankingApp\bin\Debug\BankingApp.exe
+C:\swabhav\BankingApp\BankingApp\bin\Debug\BankingApp.pdb
+C:\swabhav\BankingApp\BankingApp\obj\Debug\BankingApp.csprojAssemblyReference.cache
+C:\swabhav\BankingApp\BankingApp\obj\Debug\BankingApp.csproj.CoreCompileInputs.cache
+C:\swabhav\BankingApp\BankingApp\obj\Debug\BankingApp.exe
+C:\swabhav\BankingApp\BankingApp\obj\Debug\BankingApp.pdb

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBasic", "NetBasic.csproj", "{2CEB56C1-797A-4820-A126-41A44E6557CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CEB56C1-797A-4820-A126-41A44E6557CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CEB56C1-797A-4820-A126-41A44E6557CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CEB56C1-797A-4820-A126-41A44E6557CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CEB56C1-797A-4820-A126-41A44E6557CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24CC99DE-5D96-4E6E-A7D2-20E98A06CDB6}
+	EndGlobalSection
+EndGlobal

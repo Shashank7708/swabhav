@@ -1,0 +1,76 @@
+
+<!--
+<div class="form-froup row">
+<label class="col-sm-2 col-form-label">Name</label>
+<div>
+<input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter name">
+</div>
+
+<br>
+<br>
+<label class="col-sm-2 col-form-label">mobileno</label>
+<div>
+<input type="text" class="form-control" [(ngModel)]="mobileno" placeholder="mobileno">
+</div>
+</div>
+<button class="btn btn-primary"  type="submit" (click)="addContact()" >Submit</button>
+-->
+
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="jumbotron">
+                <h2 class="text-primary">Add-Contact</h2>
+                <form [formGroup]="addcontact" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        
+                        <input type="text" hidden
+                        [disabled]="true"
+                        [(ngModel)]="contact.id"  
+                        class="form-control"
+                        formControlName="Id">
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Name</label>
+                        <input type="text"
+                         [(ngModel)]="contact.name"
+                         class="form-control"
+                         formControlName="Name">
+                            <div class="text-danger" *ngIf="addcontact.controls['Name'].hasError('required') 
+                                    && addcontact.controls['Name'].touched" >
+                                    Name Field Cannot be Empty 
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold">Mobileno</label>
+                        <input type="number"
+                         [(ngModel)]="contact.mobileno"
+                         class="form-control"
+                         formControlName="Mobileno">
+                         <div class="text-danger">
+                            <div *ngIf="addcontact.controls['Mobileno'].hasError('required') 
+                                    && addcontact.controls['Mobileno'].touched" >
+                                     Mobileno Field cannot be empty
+                             </div>
+                             <div *ngIf="addcontact.controls['Mobileno'].errors?.minlength
+                                && addcontact.controls['Mobileno'].errors?.minlength
+                                && addcontact.controls['Mobileno'].touched" >
+                                Min Lenghth is 10 and max lenght is 10
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<a class="btn btn-primary" routerLink="/home">Back to Main List</a>

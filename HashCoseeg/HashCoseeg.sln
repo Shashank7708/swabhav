@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCoseeg", "HashCoseeg\HashCoseeg.csproj", "{A839D94F-E8CB-4DC7-8C0B-0CA38ABE19E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A839D94F-E8CB-4DC7-8C0B-0CA38ABE19E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A839D94F-E8CB-4DC7-8C0B-0CA38ABE19E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A839D94F-E8CB-4DC7-8C0B-0CA38ABE19E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A839D94F-E8CB-4DC7-8C0B-0CA38ABE19E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D49835EE-369B-49D1-87D5-C6EFC28ACC77}
+	EndGlobalSection
+EndGlobal

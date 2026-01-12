@@ -1,0 +1,7 @@
+C:\swabhav\Background\Background\bin\Debug\Background.exe.config
+C:\swabhav\Background\Background\bin\Debug\Background.exe
+C:\swabhav\Background\Background\bin\Debug\Background.pdb
+C:\swabhav\Background\Background\obj\Debug\Background.csprojAssemblyReference.cache
+C:\swabhav\Background\Background\obj\Debug\Background.csproj.CoreCompileInputs.cache
+C:\swabhav\Background\Background\obj\Debug\Background.exe
+C:\swabhav\Background\Background\obj\Debug\Background.pdb

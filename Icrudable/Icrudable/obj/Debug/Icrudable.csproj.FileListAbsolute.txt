@@ -1,0 +1,7 @@
+C:\swabhav\Icrudable\Icrudable\bin\Debug\Icrudable.exe.config
+C:\swabhav\Icrudable\Icrudable\bin\Debug\Icrudable.exe
+C:\swabhav\Icrudable\Icrudable\bin\Debug\Icrudable.pdb
+C:\swabhav\Icrudable\Icrudable\obj\Debug\Icrudable.csprojAssemblyReference.cache
+C:\swabhav\Icrudable\Icrudable\obj\Debug\Icrudable.csproj.CoreCompileInputs.cache
+C:\swabhav\Icrudable\Icrudable\obj\Debug\Icrudable.exe
+C:\swabhav\Icrudable\Icrudable\obj\Debug\Icrudable.pdb

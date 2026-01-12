@@ -1,0 +1,7 @@
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\bin\Debug\PrintContentOFTXTFile.exe.config
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\bin\Debug\PrintContentOFTXTFile.exe
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\bin\Debug\PrintContentOFTXTFile.pdb
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\obj\Debug\PrintContentOFTXTFile.csprojAssemblyReference.cache
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\obj\Debug\PrintContentOFTXTFile.csproj.CoreCompileInputs.cache
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\obj\Debug\PrintContentOFTXTFile.exe
+C:\swabhav\PrintContentOFTXTFile\PrintContentOFTXTFile\obj\Debug\PrintContentOFTXTFile.pdb

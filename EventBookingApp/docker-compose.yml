@@ -1,0 +1,6 @@
+services:
+  eventmanagementwebapi:
+    image: ${DOCKER_REGISTRY-}eventmanagementwebapi
+    build:
+      context: .
+      dockerfile: EventManagementWebApi/Dockerfile

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Table Column -->
+      <div class="col-md-8">
+        <div class="card bg-warning p-3">
+          <div class="card-header">
+            <h4>Event List</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Venue</th>
+                  <th>Capacity</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>India Voice</td>
+                  <td>Music</td>
+                  <td>16-10-2025</td>
+                  <td>18-10-2025</td>
+                  <td>Mumbai</td>
+                  <td>100</td>
+                  <td>10000</td>
+                  <td>Active</td>
+                  <td>
+                    <button class="btn btn-sm btn-primary">Edit</button>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                  </td>
+                </tr>
+                @for( i of eventList;track $index){
+                <tr>
+                  <td>{{i.title}}</td>
+                  <td>{{i.description}}</td>
+                  <td>{{i.startDate}}</td>
+                  <td>{{i.endDate}}</td>
+                  <td>{{i.venueName}}</td>
+                  <td>{{i.capacity}}</td>
+                  <td>{{i.price}}</td>
+                  <td>{{i.isActive}}</td>
+                  <td>
+                    <button [hidden]="!IsAdmin" class="btn btn-sm btn-primary" (click)="EditEventForm(i)">Edit</button>
+                    <button [hidden]="!IsAdmin" class="btn btn-sm btn-danger">Delete</button>
+                    @if(!IsAdmin){
+                    <button [hidden]="i.IsBooked" (click)="BookTicket(i.id)" class="btn btn-sm btn-primary">Book</button>
+                    <button [hidden]="!i.IsBooked " (click)="CancelTicket(i.id)" class="btn btn-sm btn-success">CancelBooking</button>
+                    }
+                  </td>
+                </tr>
+            }
+                <!-- More rows can be added here -->
+              </tbody>
+            </table>
+            <button class="btn btn-success" (click)="ConfirmBooking()" >ConfirmBooking</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="col-md-4"  [hidden]="!IsAdmin">
+        <div class="card bg-warning p-3">
+          <div class="card-header">
+            <h4>Add / Edit Event</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="EventForm">
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" formControlName="title" class="form-control" id="title" placeholder="Enter Title">
+              </div>
+
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" formControlName="description" class="form-control" id="description" placeholder="Enter Description">
+              </div>
+
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="startDate" class="form-label">Start Date</label>
+                  <input type="datetime-local" formControlName="startDate" class="form-control" id="startDate">
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="endDate" class="form-label">End Date</label>
+                  <input type="datetime-local" formControlName="endDate" class="form-control" id="endDate">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="venue" class="form-label">Venue Name</label>
+                <input type="text" formControlName="venueName" class="form-control" id="venue" placeholder="Enter Venue">
+              </div>
+
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="capacity" class="form-label">Capacity</label>
+                  <input type="number" formControlName="capacity" class="form-control" id="capacity" placeholder="Enter Capacity">
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="price" class="form-label">Price</label>
+                  <input type="number" formControlName="price" class="form-control" id="price" placeholder="Enter Price">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <input type="checkbox" formControlName="isActive" class="form-check-input">
+              </div>
+
+              <button type="submit" (click)="AddEditEvent()" [disabled]="EventForm.invalid" class="btn btn-success w-100">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\UnitztestingTests.dll
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\UnitztestingTests.pdb
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Unitztesting.exe
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Unitztesting.pdb
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Unitztesting.exe.config
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\swabhav\Unitztesting\UnitztestingTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\swabhav\Unitztesting\UnitztestingTests\obj\Debug\UnitztestingTests.csprojAssemblyReference.cache
+C:\swabhav\Unitztesting\UnitztestingTests\obj\Debug\UnitztestingTests.csproj.CoreCompileInputs.cache
+C:\swabhav\Unitztesting\UnitztestingTests\obj\Debug\UnitztestingTests.csproj.CopyComplete
+C:\swabhav\Unitztesting\UnitztestingTests\obj\Debug\UnitztestingTests.dll
+C:\swabhav\Unitztesting\UnitztestingTests\obj\Debug\UnitztestingTests.pdb

@@ -1,0 +1,7 @@
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\bin\Debug\Find3ExceptionInCode.exe.config
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\bin\Debug\Find3ExceptionInCode.exe
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\bin\Debug\Find3ExceptionInCode.pdb
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\obj\Debug\Find3ExceptionInCode.csprojAssemblyReference.cache
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\obj\Debug\Find3ExceptionInCode.csproj.CoreCompileInputs.cache
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\obj\Debug\Find3ExceptionInCode.exe
+C:\swabhav\Find3ExceptionInCode\Find3ExceptionInCode\obj\Debug\Find3ExceptionInCode.pdb

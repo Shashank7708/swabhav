@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" *ngIf="!service.loggedIn()" href="#">Welcome</a>
+  <a clas="navbar-brand" routerLink="/tenent/user-list" *ngIf="service.loggedIn()"
+                         >{{tenent.name | uppercase}}</a>
+    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   <!-- <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="" routerLinkActive="active"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      </ul>
+    -->
+<ul class="collapse navbar-collapse justify-content-end">
+    <a class="nav-link" routerLink="" *ngIf="!service.loggedIn()" routerLinkActive="active">Login</a>
+    <a class="nav-link" style="cursor: pointer;" routerLink="" *ngIf="service.loggedIn()" routerLinkActive="active" 
+                        (click)="service.logout()">Logout</a>
+</ul>
+    
+  </div>
+</nav>

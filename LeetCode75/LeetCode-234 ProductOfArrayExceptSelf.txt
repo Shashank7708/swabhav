@@ -1,0 +1,42 @@
+public class Solution {
+    public int[] ProductExceptSelf(int[] nums) {
+       //app2
+       int[] result=new int[nums.Length];
+       int[] left=new int[nums.Length];
+       int[] right=new int[nums.Length];
+       int product=1;
+       for(int i=0;i<nums.Length;i++){
+            left[i]=product;
+            product=product* nums[i];
+       }
+        product=1;
+       for(int i=nums.Length-1;i>=0;i--){
+            right[i]=product;
+            result[i]=left[i]*right[i];
+            product=product* nums[i];
+       }
+      // for(int i=0;i<nums.Length;i++){
+      //      result[i]=left[i]*right[i];
+//
+  //     }
+       return result;
+
+       //App1
+     //   int[] result=new int[nums.Length];
+        for(int i=0;i<nums.Length;i++){
+            int l=1,r=1;
+            int counter=i-1;
+            while(counter>=0){
+                l=l*nums[counter];
+                counter--;
+            }
+            counter=i+1;
+            while(counter<nums.Length){
+                r=r*nums[counter];
+                counter++;
+            }
+            result[i]=l*r;
+        }
+        return result;
+    }
+}

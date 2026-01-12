@@ -1,0 +1,50 @@
+
+<br>
+<br>
+
+
+<button class="btn btn-primary btn-lg" (click)="addClick()" type="submit">Add</button>
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-12">
+            
+         
+<table class="table">
+<thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobileno</th>   
+        
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let contact of contacts">
+    <td scope="row">{{contact.id}}</td>
+    <td scope="row">{{contact.name}}</td>
+    <td scope="row">{{contact.mobileno}}</td>
+    
+    <td>
+        <button type="button" class="btn btn btn-info" (click)="editClick(contact)" >Edit</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger" (click)="deleteClick(contact.id)"   >Delete</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-primary" (click)="getAddress(contact)">Address</button>
+    </td>
+    </tr>
+    
+</table>
+</div>
+</div>
+</div>
+
+<br>
+
+<button class="btn btn-primary" (click)="backtoList()">Back</button>

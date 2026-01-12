@@ -1,0 +1,7 @@
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\bin\Debug\ChecKContentOfInstance.exe.config
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\bin\Debug\ChecKContentOfInstance.exe
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\bin\Debug\ChecKContentOfInstance.pdb
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\obj\Debug\ChecKContentOfInstance.csprojAssemblyReference.cache
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\obj\Debug\ChecKContentOfInstance.csproj.CoreCompileInputs.cache
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\obj\Debug\ChecKContentOfInstance.exe
+C:\swabhav\ChecKContentOfInstance\ChecKContentOfInstance\obj\Debug\ChecKContentOfInstance.pdb

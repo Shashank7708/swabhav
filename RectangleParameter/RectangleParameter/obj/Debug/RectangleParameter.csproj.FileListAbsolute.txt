@@ -1,0 +1,7 @@
+C:\swabhav\RectangleParameter\RectangleParameter\bin\Debug\RectangleParameter.exe.config
+C:\swabhav\RectangleParameter\RectangleParameter\bin\Debug\RectangleParameter.exe
+C:\swabhav\RectangleParameter\RectangleParameter\bin\Debug\RectangleParameter.pdb
+C:\swabhav\RectangleParameter\RectangleParameter\obj\Debug\RectangleParameter.csprojAssemblyReference.cache
+C:\swabhav\RectangleParameter\RectangleParameter\obj\Debug\RectangleParameter.csproj.CoreCompileInputs.cache
+C:\swabhav\RectangleParameter\RectangleParameter\obj\Debug\RectangleParameter.exe
+C:\swabhav\RectangleParameter\RectangleParameter\obj\Debug\RectangleParameter.pdb

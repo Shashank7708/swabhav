@@ -1,0 +1,7 @@
+C:\swabhav\TrialONDebug\TrialONDebug\bin\Debug\TrialONDebug.exe.config
+C:\swabhav\TrialONDebug\TrialONDebug\bin\Debug\TrialONDebug.exe
+C:\swabhav\TrialONDebug\TrialONDebug\bin\Debug\TrialONDebug.pdb
+C:\swabhav\TrialONDebug\TrialONDebug\obj\Debug\TrialONDebug.csprojAssemblyReference.cache
+C:\swabhav\TrialONDebug\TrialONDebug\obj\Debug\TrialONDebug.csproj.CoreCompileInputs.cache
+C:\swabhav\TrialONDebug\TrialONDebug\obj\Debug\TrialONDebug.exe
+C:\swabhav\TrialONDebug\TrialONDebug\obj\Debug\TrialONDebug.pdb

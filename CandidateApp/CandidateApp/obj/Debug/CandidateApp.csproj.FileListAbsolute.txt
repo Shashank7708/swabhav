@@ -1,0 +1,7 @@
+C:\swabhav\CandidateApp\CandidateApp\obj\Debug\CandidateApp.csprojAssemblyReference.cache
+C:\swabhav\CandidateApp\CandidateApp\obj\Debug\CandidateApp.csproj.CoreCompileInputs.cache
+C:\swabhav\CandidateApp\CandidateApp\bin\Debug\CandidateApp.exe.config
+C:\swabhav\CandidateApp\CandidateApp\bin\Debug\CandidateApp.exe
+C:\swabhav\CandidateApp\CandidateApp\bin\Debug\CandidateApp.pdb
+C:\swabhav\CandidateApp\CandidateApp\obj\Debug\CandidateApp.exe
+C:\swabhav\CandidateApp\CandidateApp\obj\Debug\CandidateApp.pdb
